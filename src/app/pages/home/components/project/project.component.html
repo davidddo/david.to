@@ -1,9 +1,10 @@
-<mat-card class="border rounded-2xl">
-  <div>
-    
-  </div>
-  <mat-card-title>TEST</mat-card-title>
-  <mat-card-content>
+<mat-card class="border box-border rounded-2xl p-0 overflow-hidden">
+  <div class="h-40 bg-red-200 bg-opacity-75 rounded-t-2xl">
 
+  </div>
+  <mat-card-title class="text-gray-800">{{ project.name }}</mat-card-title>
+  <mat-card-subtitle>{{ project.subtitle }}</mat-card-subtitle>
+  <mat-card-content class="p-4">
+    <techstack-chips [techstack]="project.techstack"></techstack-chips>
   </mat-card-content>
 </mat-card>

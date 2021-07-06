@@ -1,3 +1,2 @@
 export * from './project';
-export * from './projects';
-export * from './work-experiences';
+export * from './work-experience';

@@ -1,0 +1,4 @@
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip *ngFor="let technology of techstack" disableRipple [class]="technology.toLowerCase()">{{ technology}}
+  </mat-chip>
+</mat-chip-list>

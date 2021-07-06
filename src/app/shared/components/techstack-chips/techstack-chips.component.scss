@@ -1,0 +1,35 @@
+.mat-chip {
+  min-height: unset;
+  padding: 12px 12px;
+  cursor: pointer;
+  user-select: none;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+  &:active {
+    box-shadow: unset !important;
+  }
+
+  &::after {
+    background: #0000;
+  }
+
+  &.angular,
+  &.redis {
+    color: #991b1b;
+    background-color: rgba(254, 202, 202, 0.65);
+  }
+
+  &.nestjs {
+    color: #1e40af;
+    background-color: rgba(191, 219, 254, 0.65);
+  }
+
+  &.mongodb,
+  &.nginx {
+    color: #065f46;
+    background-color: rgba(167, 243, 208, 0.65);
+  }
+}

@@ -1,0 +1,26 @@
+<mat-expansion-panel class="rounded-2xl" [disabled]="!experience.sections">
+  <mat-expansion-panel-header class="h-16">
+    <mat-panel-title class="flex flex-row">
+      <img src="assets/logos/{{ experience.logo }}" />
+      <div class="flex flex-col min-w">
+        <span class="font-medium text-gray-800">{{ experience.type }}</span>
+        <span class="text-gray-500">{{ experience.company }}</span>
+      </div>
+    </mat-panel-title>
+    <mat-panel-description *ngIf="isMobile$ | async" class="mr-6 text-gray-800">
+      <span class="flex flex-1">{{ experience.description }}</span>
+      <div class="flex items-center">
+        <date-range [dateRange]="experience.dateRange"></date-range>
+      </div>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <history-list class="mt-6">
+    <history-item *ngFor="let section of experience.sections let first = first; let last = last" [isFirst]="first"
+      [isLast]="last">
+      <div class="flex flex-col">
+        <span class="font-medium text-gray-800">{{ section.position }}</span>
+        <date-range [dateRange]="experience.dateRange"></date-range>
+      </div>
+    </history-item>
+  </history-list>
+</mat-expansion-panel>

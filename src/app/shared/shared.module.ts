@@ -1,11 +1,32 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '@website/material';
-import { HistoryComponent, HistoryItemComponent } from './components';
+import {
+  HistoryComponent,
+  HistoryListComponent,
+  HistoryItemComponent,
+  HistoryContentComponent,
+  DateRangeComponent,
+  TechstackChipsComponent,
+} from './components';
 
 @NgModule({
-  declarations: [HistoryComponent, HistoryItemComponent],
+  declarations: [
+    DateRangeComponent,
+    HistoryComponent,
+    HistoryListComponent,
+    HistoryItemComponent,
+    HistoryContentComponent,
+    TechstackChipsComponent,
+  ],
   imports: [CommonModule, MaterialModule],
-  exports: [HistoryComponent, HistoryItemComponent],
+  exports: [
+    DateRangeComponent,
+    HistoryComponent,
+    HistoryListComponent,
+    HistoryItemComponent,
+    HistoryContentComponent,
+    TechstackChipsComponent,
+  ],
 })
 export class SharedModule {}

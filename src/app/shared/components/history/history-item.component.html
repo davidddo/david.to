@@ -1,0 +1,11 @@
+<div class="container" [class.selected]="selected" (click)="openHistory.emit()">
+  <div class="timeline">
+    <div class="top-line" [class.first-or-last]="isFirst"></div>
+    <div class="circle" [class.primary]="isFirst"></div>
+    <div></div>
+    <div class="bottom-line" [class.first-or-last]="isLast"></div>
+  </div>
+  <div class="text">
+    <ng-content></ng-content>
+  </div>
+</div>
