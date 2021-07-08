@@ -1,21 +1,29 @@
 @use '~@angular/material' as mat;
 
 .mat-card {
-  grid-gap: 16px;
   border: 1px solid #f7f8f9;
-  border-radius: 16px;
+  border-radius: 1rem;
   padding: 0;
 
-  box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 3px 3px -1px rgb(8 11 14 / 10%);
+  @include mat.elevation-transition();
+  //box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 3px 3px -1px rgb(8 11 14 / 10%);
+  box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 6px 6px -1px rgb(8 11 14 / 10%);
 
   &:hover {
-    cursor: pointer;
-    box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 6px 6px -1px rgb(8 11 14 / 10%);
+    box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 16px 16px -1px rgb(8 11 14 / 10%);
   }
 
   .mat-card-title {
-    margin: 1rem;
+    margin: 1rem !important;
     font-size: large;
     font-weight: 500;
+  }
+
+  .mat-card-subtitle {
+    margin: 1rem !important;
+  }
+
+  .mat-card-content {
+    margin-bottom: 1rem;
   }
 }

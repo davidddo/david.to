@@ -12,7 +12,39 @@ export class HomeComponent {
     {
       name: 'SV Vaihingen Handball',
       subtitle: '',
+      logo: 'svv.png',
       techstack: ['Angular', 'NestJS', 'MongoDB'],
+      backgroundClass: 'bg-red-100',
+    },
+    {
+      name: 'Bar Brawler',
+      subtitle: '',
+      logo: 'svv.png',
+      techstack: ['Unity', 'Blender'],
+      backgroundClass: 'bg-yellow-900',
+    },
+    {
+      name: 'Bingo App',
+      subtitle:
+        'A student project with the goal of creating a bingo web app using React and Deno',
+      logo: 'bingo.png',
+      techstack: ['React', 'Deno', 'MongoDB'],
+      backgroundClass: 'bg-indigo-100',
+    },
+    {
+      name: 'Weather App',
+      subtitle:
+        'A student project with the goal of creating a weather app for Android',
+      logo: 'weatherapp.png',
+      techstack: ['Android', 'SQLite'],
+      backgroundClass: 'bg-yellow-100',
+    },
+    {
+      name: 'Space Invaders',
+      subtitle: '',
+      logo: 'svv.png',
+      techstack: ['Unity', 'Blender'],
+      backgroundClass: 'bg-yellow-900',
     },
   ];
 

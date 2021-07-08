@@ -1,8 +1,10 @@
 <h2>Projects</h2>
-<div class="grid grid-cols-3">
+<div class="grid grid-cols-3 grid-row-2 gap-4 flex-wrap">
   <project *ngFor="let project of projects" [project]="project"></project>
+  <div class="flex justify-center items-center">
+    <button mat-flat-button>More projects</button>
+  </div>
 </div>
-
 <h2>Work Experiences</h2>
 <mat-accordion>
   <work-experience *ngFor="let experience of experiences" [experience]="experience"></work-experience>

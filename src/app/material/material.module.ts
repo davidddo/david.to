@@ -5,6 +5,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatDividerModule,
     MatIconModule,
     MatChipsModule,
+    MatRippleModule,
   ],
   exports: [
     MatButtonModule,
@@ -22,6 +24,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatDividerModule,
     MatIconModule,
     MatChipsModule,
+    MatRippleModule,
   ],
 })
 export class MaterialModule {}

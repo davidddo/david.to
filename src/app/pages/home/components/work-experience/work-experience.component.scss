@@ -1,3 +1,15 @@
+:host {
+  &:first-of-type .mat-expansion-panel {
+    border-top-right-radius: 16px !important;
+    border-top-left-radius: 16px !important;
+  }
+
+  &:last-of-type .mat-expansion-panel {
+    border-bottom-right-radius: 16px !important;
+    border-bottom-left-radius: 16px !important;
+  }
+}
+
 .mat-expansion-panel {
   border: 1px solid #f7f8f9;
   box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 6px 6px -1px rgb(8 11 14 / 10%);
@@ -11,15 +23,5 @@
       object-fit: contain;
       margin-right: 24px;
     }
-  }
-
-  &:first-of-type {
-    border-top-right-radius: 16px;
-    border-top-left-radius: 16px;
-  }
-
-  &:last-of-type {
-    border-bottom-right-radius: 16px;
-    border-bottom-left-radius: 16px;
   }
 }
