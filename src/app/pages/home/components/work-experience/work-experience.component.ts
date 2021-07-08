@@ -8,6 +8,9 @@ import { Observable, Subject } from 'rxjs';
   selector: 'work-experience',
   templateUrl: './work-experience.component.html',
   styleUrls: ['./work-experience.component.scss'],
+  host: {
+    class: 'work-experience',
+  },
 })
 export class WorkExperienceComponent implements OnInit, OnDestroy {
   private readonly destroy$: Subject<void> = new Subject<void>();

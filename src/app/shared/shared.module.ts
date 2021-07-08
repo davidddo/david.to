@@ -7,6 +7,7 @@ import {
   HistoryItemComponent,
   HistoryContentComponent,
   DateRangeComponent,
+  SocialButtonComponent,
   TechstackChipsComponent,
 } from './components';
 
@@ -17,6 +18,7 @@ import {
     HistoryListComponent,
     HistoryItemComponent,
     HistoryContentComponent,
+    SocialButtonComponent,
     TechstackChipsComponent,
   ],
   imports: [CommonModule, MaterialModule],
@@ -26,6 +28,7 @@ import {
     HistoryListComponent,
     HistoryItemComponent,
     HistoryContentComponent,
+    SocialButtonComponent,
     TechstackChipsComponent,
   ],
 })

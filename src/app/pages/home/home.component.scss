@@ -2,3 +2,31 @@
   display: block;
   width: 100%;
 }
+
+::ng-deep .mat-accordion {
+  .education:first-of-type .expansion-panel .mat-expansion-panel,
+  .work-experience:first-of-type .expansion-panel .mat-expansion-panel {
+    border-top-right-radius: 1rem !important;
+    border-top-left-radius: 1rem !important;
+  }
+
+  .education:last-of-type .expansion-panel .mat-expansion-panel,
+  .work-experience:last-of-type .expansion-panel .mat-expansion-panel {
+    border-bottom-right-radius: 1rem !important;
+    border-bottom-left-radius: 1rem !important;
+  }
+}
+
+.mat-accordion {
+  display: block;
+  border: 1px solid #f7f8f9;
+  border-radius: 1rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+
+  .header {
+    margin-bottom: 1.5rem;
+  }
+}

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Project, WorkExperience } from '@website/models';
+import { Education, Project, WorkExperience } from '@website/models';
 
 @Component({
   selector: 'home',
@@ -13,7 +13,7 @@ export class HomeComponent {
       name: 'SV Vaihingen Handball',
       subtitle: '',
       logo: 'svv.png',
-      techstack: ['Angular', 'NestJS', 'MongoDB'],
+      techstack: ['Angular', 'NestJS', 'MongoDB', 'Redis'],
       backgroundClass: 'bg-red-100',
     },
     {
@@ -28,7 +28,7 @@ export class HomeComponent {
       subtitle:
         'A student project with the goal of creating a bingo web app using React and Deno',
       logo: 'bingo.png',
-      techstack: ['React', 'Deno', 'MongoDB'],
+      techstack: ['React', 'Deno', 'MongoDB', 'GraphQL'],
       backgroundClass: 'bg-indigo-100',
     },
     {
@@ -72,8 +72,7 @@ export class HomeComponent {
           position: 'Intern',
           dateRange: {
             start: 'Mar. 2020',
-            end: undefined,
-            current: true,
+            end: 'Sep. 2020',
           },
         },
       ],
@@ -81,7 +80,7 @@ export class HomeComponent {
     {
       type: 'Working Student',
       company: 'Benchkram Software GmbH',
-      description: '',
+      description: 'App development with Flutter',
       logo: 'benchkram.png',
       dateRange: {
         start: 'Nov. 2019',
@@ -91,11 +90,67 @@ export class HomeComponent {
     {
       type: 'Research Assistant',
       company: 'Hochschule der Medien Stuttgart',
-      description: '',
+      description: 'Content-Management with Zope',
       logo: 'hdm.png',
       dateRange: {
         start: 'Nov. 2018',
         end: 'Feb. 2020',
+      },
+    },
+    {
+      type: 'Intern',
+      company: 'Dekra SE',
+      description: 'EUC & Network Management',
+      logo: 'dekra.png',
+      dateRange: {
+        start: 'Jan. 2016',
+      },
+    },
+    {
+      type: 'Intern',
+      company: 'Bachmann GmbH',
+      description: 'Anwendungsentwicklung',
+      logo: 'bachmann.png',
+      dateRange: {
+        start: 'Apr. 2016',
+      },
+    },
+  ];
+
+  educations: Education[] = [
+    {
+      name: 'Hochschule der Medien Stuttgart',
+      type: 'Bachelor of Science (Media Informatics)',
+      logo: 'hdm.png',
+      dateRange: {
+        start: '2018',
+        end: undefined,
+        current: true,
+      },
+    },
+    {
+      name: 'IT.Schule Stuttgart',
+      type: 'University entrance qualification',
+      logo: 'its.png',
+      dateRange: {
+        start: 'Sep. 2015',
+        end: 'Jul. 2017',
+      },
+    },
+    {
+      name: 'Rober-Koch-Realschule',
+      type: 'Secondary school leaving certificate',
+      dateRange: {
+        start: 'Sep. 2009',
+        end: 'Jul. 2015',
+      },
+    },
+    {
+      name: 'Pestalozzischule',
+      type: 'Primary school',
+      dateRange: {
+        start: 'Sep. 2005',
+        end: 'Jul. 2009',
       },
     },
   ];
