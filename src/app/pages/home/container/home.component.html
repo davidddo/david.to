@@ -3,7 +3,9 @@
     <img class="rounded-full" height="160" width="160" src="https://avatars.githubusercontent.com/u/8736944?v=4">
   </div>
   <h2 class="text-4xl font-bold text-gray-800">Hi, im David,</h2>
-  <h3 class="text-2xl font-light text-gray-500">i create games, build apps and do everything that comes with it.</h3>
+  <h3 class="text-2xl font-light text-gray-500 text-center">
+    i create games, build apps and do everything that comes with it
+  </h3>
   <div class="mb-10 mt-4">
     <social-button type="GITHUB" href="https://github.com/davidddo"></social-button>
     <social-button type="LINKEDIN" href="https://www.linkedin.com/in/david-tomschitz-10838a140"></social-button>
@@ -13,8 +15,9 @@
 
 <div class="section">
   <header title="Projects" subtitle="Things I have worked on in the past"></header>
-  <div class="grid grid-cols-3 grid-row-2 gap-4 flex-wrap">
-    <project *ngFor="let project of projects" [project]="project"></project>
+  <div class="projects grid grid-cols-3 grid-row-2 gap-4">
+    <project *ngFor="let project of projects$ | async" [project]="project" (onNavigate)="openProject(project)">
+    </project>
     <div class="flex justify-center items-center">
       <button mat-flat-button>More projects</button>
     </div>
@@ -24,13 +27,13 @@
 <div class="section">
   <header title="Work Experiences"></header>
   <mat-accordion>
-    <work-experience *ngFor="let experience of experiences" [experience]="experience"></work-experience>
+    <work-experience *ngFor="let experience of experiences$ | async" [experience]="experience"></work-experience>
   </mat-accordion>
 </div>
 
 <div class="section">
   <header title="Education"></header>
   <mat-accordion>
-    <education *ngFor="let education of educations" [education]="education"></education>
+    <!--<education *ngFor="let education of educations" [education]="education"></education>-->
   </mat-accordion>
 </div>

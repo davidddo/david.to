@@ -1,7 +1,11 @@
+import { Technology } from './technology';
+
 export interface Project {
+  id: string;
   name: string;
   subtitle: string;
   logo: string;
-  techstack: string[];
+  //technologies: Technology[];
   backgroundClass: string;
+  url?: string | { url: string; target: string };
 }

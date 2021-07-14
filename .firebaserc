@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "david-tomschitz": {
+      "hosting": {
+        "website": [
+          "david-tomschitz"
+        ]
+      }
+    }
+  }
+}

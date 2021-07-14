@@ -3,7 +3,6 @@
   padding: 12px 8px;
   cursor: pointer;
   user-select: none;
-  margin: 2px !important;
   font-weight: 400;
   font-size: 12px;
 
@@ -38,5 +37,11 @@
   &.deno {
     color: #1f2937;
     background-color: rgba(229, 231, 235, 0.65);
+  }
+
+  &.flutter {
+    color: #ddd6fe;
+    
+    background-color: rgba(91, 33, 182, 0.65);
   }
 }

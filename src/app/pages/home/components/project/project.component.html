@@ -1,10 +1,11 @@
-<mat-card class="border box-border rounded-2xl min-h-full p-0 overflow-hidden cursor-pointer">
+<mat-card class="border box-border rounded-2xl min-h-full p-0 overflow-hidden cursor-pointer"
+  (click)="onNavigate.emit()">
   <div class="flex justify-center items-center h-40 bg-opacity-80 rounded-t-2xl {{project.backgroundClass}}">
-    <img src="assets/logos/{{ project.logo }}" width="100" height="100" />
+    <img [src]="project.logo" width="100" height="100" />
   </div>
   <mat-card-title class="text-gray-800 opacity-90">{{ project.name }}</mat-card-title>
   <mat-card-subtitle class="m-4 text-gray-500 font-light">{{ project.subtitle }}</mat-card-subtitle>
   <mat-card-content class="m-4">
-    <techstack-chips [techstack]="project.techstack"></techstack-chips>
+    <techstack-chips></techstack-chips>
   </mat-card-content>
 </mat-card>

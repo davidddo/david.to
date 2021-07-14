@@ -1,5 +1,5 @@
 <expansion-panel [title]="experience.type" [subtitle]="experience.company" [description]="experience.description"
-  img="assets/logos/{{ experience.logo }}" [dateRange]="experience.dateRange" [disabled]="!experience.sections">
+  [img]="experience.logo" [dateRange]="experience.dateRange" [disabled]="!experience.sections">
   <history-list class="mt-6">
     <history-item *ngFor="let section of experience.sections let first = first; let last = last" [isFirst]="first"
       [isLast]="last">

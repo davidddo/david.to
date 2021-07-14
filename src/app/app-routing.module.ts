@@ -8,6 +8,13 @@ const routes: Routes = [
       import('./pages/home/home.module').then(m => m.HomeModule),
     pathMatch: 'full',
   },
+  {
+    path: 'svv-handball',
+    loadChildren: () =>
+      import('./pages/svv-handball/svv-handball.module').then(
+        m => m.SvvHandballModule,
+      ),
+  },
 ];
 
 @NgModule({

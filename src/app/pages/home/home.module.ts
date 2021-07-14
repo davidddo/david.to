@@ -1,7 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MaterialModule } from '@website/material';
 import { SharedModule } from '@website/shared';
+import { HomeComponent } from './container';
 import {
   EducationComponent,
   ExpansionPanelComponent,
@@ -10,10 +12,15 @@ import {
   WorkExperienceComponent,
 } from './components';
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
 
 @NgModule({
-  imports: [CommonModule, MaterialModule, SharedModule, HomeRoutingModule],
+  imports: [
+    CommonModule,
+    AngularFirestoreModule,
+    MaterialModule,
+    SharedModule,
+    HomeRoutingModule,
+  ],
   declarations: [
     HomeComponent,
     EducationComponent,

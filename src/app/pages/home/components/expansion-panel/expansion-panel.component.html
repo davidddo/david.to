@@ -1,7 +1,9 @@
-<mat-expansion-panel class="rounded-2xl" [disabled]="disabled">
+<mat-expansion-panel class="rounded-2xl" [disabled]="disabled" (click)="toggle()">
   <mat-expansion-panel-header>
     <mat-panel-title class="flex flex-row">
-      <img [src]="img" />
+      <div class="w-10 h-10 mr-6">
+        <img *ngIf="img" [src]="img" />
+      </div>
       <div class="flex flex-col min-w justify-center">
         <span class="font-medium text-gray-800">{{ title }}</span>
         <span class="font-light text-gray-500 leading-3">{{ subtitle }}</span>
@@ -14,5 +16,7 @@
       </div>
     </mat-panel-description>
   </mat-expansion-panel-header>
-  <ng-content></ng-content>
+  <div [@fade]="!open ? 'in' : 'out'">
+    <ng-content></ng-content>
+  </div>
 </mat-expansion-panel>

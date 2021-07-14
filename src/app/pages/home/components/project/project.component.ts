@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project } from '@website/models';
 
 @Component({
@@ -8,4 +8,5 @@ import { Project } from '@website/models';
 })
 export class ProjectComponent {
   @Input() project: Project;
+  @Output() onNavigate: EventEmitter<void> = new EventEmitter<void>();
 }
