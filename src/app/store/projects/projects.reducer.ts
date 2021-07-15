@@ -1,11 +1,11 @@
-import {
-  createFeatureSelector,
-  createReducer,
-  createSelector,
-  on,
-} from '@ngrx/store';
-import { createEntityAdapter, EntityState } from '@ngrx/entity';
+import { createFeatureSelector, createReducer, on } from '@ngrx/store';
+import { createEntityAdapter } from '@ngrx/entity';
 import { Project } from '@website/models';
+import {
+  createLoadedSelector,
+  createLoadingSelector,
+  DefaultEntityState,
+} from '@website/shared/utils';
 import { ProjectsAction } from './projects.actions';
 import * as fromRoot from '@website/store';
 
@@ -15,10 +15,7 @@ export const adapter = createEntityAdapter<Project>({
   selectId: project => project.id,
 });
 
-export interface ProjectsState extends EntityState<Project> {
-  loading: boolean;
-  loaded: boolean;
-}
+export interface ProjectsState extends DefaultEntityState<Project> {}
 
 export interface State extends fromRoot.State {
   [featureKey]: ProjectsState;
@@ -54,12 +51,5 @@ export const {
   selectTotal: selectProjectsTotal,
 } = adapter.getSelectors(selectProjectsState);
 
-export const selectIsLoading = createSelector(
-  selectProjectsState,
-  state => state.loading,
-);
-
-export const selectIsLoaded = createSelector(
-  selectProjectsState,
-  state => state.loaded,
-);
+export const selectIsLoading = createLoadingSelector(selectProjectsState);
+export const selectIsLoaded = createLoadedSelector(selectProjectsState);

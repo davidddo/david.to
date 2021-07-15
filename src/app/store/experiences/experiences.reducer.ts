@@ -1,11 +1,11 @@
-import {
-  createFeatureSelector,
-  createReducer,
-  createSelector,
-  on,
-} from '@ngrx/store';
-import { createEntityAdapter, EntityState } from '@ngrx/entity';
+import { createFeatureSelector, createReducer, on } from '@ngrx/store';
+import { createEntityAdapter } from '@ngrx/entity';
 import { WorkExperience } from '@website/models';
+import {
+  createLoadedSelector,
+  createLoadingSelector,
+  DefaultEntityState,
+} from '@website/shared/utils';
 import { ExperiencesAction } from './experiences.actions';
 import * as fromRoot from '@website/store';
 
@@ -15,10 +15,7 @@ export const adapter = createEntityAdapter<WorkExperience>({
   selectId: experience => experience.id,
 });
 
-export interface ExperiencesState extends EntityState<WorkExperience> {
-  loading: boolean;
-  loaded: boolean;
-}
+export interface ExperiencesState extends DefaultEntityState<WorkExperience> {}
 
 export interface State extends fromRoot.State {
   [featureKey]: ExperiencesState;
@@ -59,12 +56,5 @@ export const {
   selectTotal: selectExperiencesTotal,
 } = adapter.getSelectors(selectExperiencesState);
 
-export const selectIsLoading = createSelector(
-  selectExperiencesState,
-  state => state.loading,
-);
-
-export const selectIsLoaded = createSelector(
-  selectExperiencesState,
-  state => state.loaded,
-);
+export const selectIsLoading = createLoadingSelector(selectExperiencesState);
+export const selectIsLoaded = createLoadedSelector(selectExperiencesState);

@@ -1,11 +1,11 @@
-import {
-  createFeatureSelector,
-  createReducer,
-  createSelector,
-  on,
-} from '@ngrx/store';
-import { createEntityAdapter, EntityState } from '@ngrx/entity';
+import { createFeatureSelector, createReducer, on } from '@ngrx/store';
+import { createEntityAdapter } from '@ngrx/entity';
 import { Education } from '@website/models';
+import {
+  createLoadedSelector,
+  createLoadingSelector,
+  DefaultEntityState,
+} from '@website/shared/utils';
 import { EducationsAction } from './educations.actions';
 import * as fromRoot from '@website/store';
 
@@ -15,10 +15,7 @@ export const adapter = createEntityAdapter<Education>({
   selectId: education => education.id,
 });
 
-export interface EducationsState extends EntityState<Education> {
-  loading: boolean;
-  loaded: boolean;
-}
+export interface EducationsState extends DefaultEntityState<Education> {}
 
 export interface State extends fromRoot.State {
   [featureKey]: EducationsState;
@@ -59,12 +56,5 @@ export const {
   selectTotal: selectEducationsTotal,
 } = adapter.getSelectors(selectEducationsState);
 
-export const selectIsLoading = createSelector(
-  selectEducationsState,
-  state => state.loading,
-);
-
-export const selectIsLoaded = createSelector(
-  selectEducationsState,
-  state => state.loaded,
-);
+export const selectIsLoading = createLoadingSelector(selectEducationsState);
+export const selectIsLoaded = createLoadedSelector(selectEducationsState);
