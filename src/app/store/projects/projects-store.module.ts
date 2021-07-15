@@ -10,6 +10,6 @@ import * as fromProjects from './projects.reducer';
     StoreModule.forFeature(fromProjects.featureKey, fromProjects.reducer),
     EffectsModule.forFeature([ProjectsEffects]),
   ],
-  //providers: [ProjectsService],
+  providers: [ProjectsService],
 })
 export class ProjectsStoreModule {}

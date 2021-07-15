@@ -26,6 +26,8 @@ export class ProjectsService {
 
           return { id, ...data };
         });
+
+        //console.log(projects);
       }),
     );
   }

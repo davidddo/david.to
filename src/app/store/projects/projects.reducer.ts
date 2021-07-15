@@ -18,7 +18,6 @@ export const adapter = createEntityAdapter<Project>({
 export interface ProjectsState extends EntityState<Project> {
   loading: boolean;
   loaded: boolean;
-  imageUploading: boolean;
 }
 
 export interface State extends fromRoot.State {
@@ -29,7 +28,6 @@ export const reducer = createReducer(
   adapter.getInitialState({
     loading: false,
     loaded: false,
-    imageUploading: false,
   }),
   on(ProjectsAction.loadProjects, state => ({ ...state, loading: true })),
   on(ProjectsAction.loadProjectsSuccess, (state, { projects }) => {

@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { Education, Project, WorkExperience } from '@website/models';
 import { ProjectsAction } from '@website/store/projects';
 import * as fromProjects from '@website/store/projects';
-import { ProjectsService } from '@website/store/projects/projects.service';
 
 @Component({
   selector: 'home',
@@ -20,18 +19,13 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private store: Store<fromProjects.State>, //private projectsService: ProjectsService,
+    private store: Store<fromProjects.State>,
   ) {
     this.projects$ = this.store.pipe(select(fromProjects.selectAllProjects));
   }
 
   ngOnInit() {
     this.store.dispatch(ProjectsAction.loadProjects());
-    /*this.projectsService.fetchProjects().subscribe(projects => {
-      console.log(projects);
-
-      //this.store.dispatch(ProjectsAction.loadProjectsSuccess({ projects }));
-    });*/
   }
 
   openProject(project: Project) {

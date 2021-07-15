@@ -5,15 +5,6 @@ import { createGenericEffect } from '@website/shared/utils';
 import { ProjectsAction } from './projects.actions';
 import { ProjectsService } from './projects.service';
 import * as fromProjects from './projects.reducer';
-import {
-  catchError,
-  concatMap,
-  map,
-  mergeMap,
-  switchMap,
-} from 'rxjs/operators';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Project } from '@website/models';
 
 @Injectable()
 export class ProjectsEffects {
