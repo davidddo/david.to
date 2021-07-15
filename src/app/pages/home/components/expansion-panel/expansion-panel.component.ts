@@ -9,26 +9,11 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { DateRange } from '@website/models';
 import { map } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 
 @Component({
   selector: 'expansion-panel',
   templateUrl: './expansion-panel.component.html',
   styleUrls: ['./expansion-panel.component.scss'],
-  animations: [
-    trigger('fade', [
-      state('in', style({ opacity: 0 })),
-      state('out', style({ opacity: 1 })),
-      transition('in => out', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-      transition('out => in', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'expansion-panel',
@@ -59,10 +44,5 @@ export class ExpansionPanelComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
-  }
-
-  toggle() {
-    if (this.disabled) return;
-    this.open = !this.open;
   }
 }

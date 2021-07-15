@@ -1,4 +1,4 @@
-<mat-expansion-panel class="rounded-2xl" [disabled]="disabled" (click)="toggle()">
+<mat-expansion-panel class="rounded-2xl" [disabled]="disabled">
   <mat-expansion-panel-header>
     <mat-panel-title class="flex flex-row">
       <div class="w-10 h-10 mr-6">
@@ -16,7 +16,5 @@
       </div>
     </mat-panel-description>
   </mat-expansion-panel-header>
-  <div [@fade]="!open ? 'in' : 'out'">
-    <ng-content></ng-content>
-  </div>
+  <ng-content></ng-content>
 </mat-expansion-panel>

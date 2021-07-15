@@ -1,8 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '@website/core/services';
-import { Education, Project, WorkExperience } from '@website/models';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { Education, Project, WorkExperience } from '@website/models';
+import { ProjectsAction } from '@website/store/projects';
+import * as fromProjects from '@website/store/projects';
 
 @Component({
   selector: 'home',
@@ -10,14 +12,20 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   projects$: Observable<Project[]>;
   experiences$: Observable<WorkExperience[]>;
   educations: Education[];
 
-  constructor(private router: Router, private apiService: DataService) {
-    this.projects$ = this.apiService.getProjects();
-    this.experiences$ = this.apiService.getExperiences();
+  constructor(
+    private router: Router,
+    private store: Store<fromProjects.State>,
+  ) {
+    this.projects$ = this.store.pipe(select(fromProjects.selectAllProjects));
+  }
+
+  ngOnInit() {
+    this.store.dispatch(ProjectsAction.loadProjects());
   }
 
   openProject(project: Project) {
