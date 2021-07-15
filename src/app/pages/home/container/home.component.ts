@@ -15,7 +15,7 @@ import * as fromProjects from '@website/store/projects';
 export class HomeComponent implements OnInit {
   projects$: Observable<Project[]>;
   experiences$: Observable<WorkExperience[]>;
-  educations: Education[];
+  educations: Observable<Education[]>;
 
   constructor(
     private router: Router,

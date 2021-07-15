@@ -3,11 +3,8 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/firestore';
-import { Store } from '@ngrx/store';
 import { Project } from '@website/models';
-import { map, mergeMap, switchMap, take } from 'rxjs/operators';
-import { ProjectsAction } from './projects.actions';
-import * as fromProjects from './projects.reducer';
+import { mapDocuments } from '@website/shared/utils';
 
 @Injectable({ providedIn: 'root' })
 export class ProjectsService {
@@ -18,17 +15,6 @@ export class ProjectsService {
   }
 
   fetchProjects() {
-    return this.projectsRef.snapshotChanges().pipe(
-      map(actions => {
-        return actions.map<Project>(action => {
-          const id = action.payload.doc.id;
-          const data = action.payload.doc.data() as Project;
-
-          return { id, ...data };
-        });
-
-        //console.log(projects);
-      }),
-    );
+    return this.projectsRef.snapshotChanges().pipe(mapDocuments());
   }
 }
