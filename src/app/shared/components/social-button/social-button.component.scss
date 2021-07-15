@@ -8,7 +8,14 @@
   box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 6px 6px -1px rgb(8 11 14 / 10%);
   margin: 0 8px;
 
+  &.flat {
+    box-shadow: none;
+  }
+
   &:hover {
     box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 16px 16px -1px rgb(8 11 14 / 10%);
+    &.flat {
+      box-shadow: none;
+    }
   }
 }

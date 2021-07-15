@@ -1,6 +1,4 @@
-import { Color, TextColor, BackgroundColor } from './color';
-
-export type TechnologyType =
+export type Technology =
   | 'Angular'
   | 'React'
   | 'NestJS'
@@ -12,8 +10,3 @@ export type TechnologyType =
   | 'MongoDB'
   | 'WebSocket'
   | 'GraphQL';
-
-export interface Technology {
-  name: TechnologyType;
-  color: Color | { text: TextColor; background: BackgroundColor };
-}

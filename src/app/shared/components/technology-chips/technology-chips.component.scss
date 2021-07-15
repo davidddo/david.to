@@ -3,7 +3,7 @@
   padding: 12px 8px;
   cursor: pointer;
   user-select: none;
-  font-weight: 400;
+  font-weight: bold;
   font-size: 12px;
 
   &:active {
@@ -41,7 +41,7 @@
 
   &.flutter {
     color: #ddd6fe;
-    
+
     background-color: rgba(91, 33, 182, 0.65);
   }
 }

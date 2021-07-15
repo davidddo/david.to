@@ -1,0 +1,5 @@
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip *ngFor="let technology of technologies" [ngStyle]="getBackgroundStyle()" disableRipple>
+    {{ technology }}
+  </mat-chip>
+</mat-chip-list>

@@ -1,4 +1,6 @@
-<div class="dark flex flex-col max-w-4xl w-full items-center m-4 dark:bg-gray-800">
-  <app-header></app-header>
-  <router-outlet></router-outlet>
+<div class="flex flex-col items-center max-w-full">
+  <app-header *ngIf="showHeader" [@fade]></app-header>
+  <div class="dark flex flex-col max-w-4xl w-full items-center m-4 dark:bg-gray-800">
+    <router-outlet></router-outlet>
+  </div>
 </div>

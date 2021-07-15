@@ -4,6 +4,7 @@
   border: 1px solid #f7f8f9;
   border-radius: 1rem;
   padding: 0;
+  min-height: 382px;
 
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 6px 6px -1px rgb(8 11 14 / 10%);
@@ -17,13 +18,24 @@
   }
 
   img {
-    transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1),
+      filter 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    filter: blur(2px) grayscale(100%);
+
+    &.loaded {
+      filter: blur(0px) grayscale(0%);
+    }
   }
 
   .mat-card-title {
     margin: 1rem !important;
     font-size: large;
     font-weight: 500;
+
+    .shimmer {
+      height: 20px;
+      width: 220px;
+    }
   }
 
   .mat-card-subtitle {

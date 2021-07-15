@@ -1,3 +1,4 @@
+import { Color } from './colors';
 import { Technology } from './technology';
 
 export interface Project {
@@ -5,7 +6,8 @@ export interface Project {
   name: string;
   subtitle: string;
   logo: string;
-  //technologies: Technology[];
-  backgroundClass: string;
+  technologies: Technology[];
+  color: Color;
+  position: number;
   url?: string | { url: string; target: string };
 }

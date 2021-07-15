@@ -1,5 +1,4 @@
 import { DateRange } from './date-range';
-import { WorkSection } from './work-section';
 
 export interface WorkExperience {
   id: string;
@@ -7,6 +6,12 @@ export interface WorkExperience {
   company: string;
   description: string;
   logo: string;
+  position: number;
   dateRange: DateRange;
   sections?: WorkSection[];
+}
+
+export interface WorkSection {
+  dateRange: DateRange;
+  position: string;
 }

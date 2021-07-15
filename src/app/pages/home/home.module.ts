@@ -8,6 +8,7 @@ import {
   ExpansionPanelComponent,
   HeaderComponent,
   ProjectComponent,
+  ProjectsComponent,
   WorkExperienceComponent,
 } from './components';
 import { HomeRoutingModule } from './home-routing.module';
@@ -20,6 +21,7 @@ import { HomeRoutingModule } from './home-routing.module';
     ExpansionPanelComponent,
     HeaderComponent,
     ProjectComponent,
+    ProjectsComponent,
     WorkExperienceComponent,
   ],
 })

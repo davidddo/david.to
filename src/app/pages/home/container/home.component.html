@@ -1,7 +1,5 @@
 <div class="flex flex-col justify-center items-center mb-10 mt-10">
-  <div class="rounded-full w-40 h-40 bg-gray-100 mb-10">
-    <img class="rounded-full" height="160" width="160" src="https://avatars.githubusercontent.com/u/8736944?v=4">
-  </div>
+  <avatar [height]="160" [width]="160"></avatar>
   <h2 class="text-4xl font-bold text-gray-800">Hi, im David,</h2>
   <h3 class="text-2xl font-light text-gray-500 text-center">
     i create games, build apps and do everything that comes with it
@@ -15,13 +13,9 @@
 
 <div class="section">
   <header title="Projects" subtitle="Things I have worked on in the past"></header>
-  <div class="projects grid grid-cols-3 grid-row-2 gap-4">
-    <project *ngFor="let project of projects$ | async" [project]="project" (onNavigate)="openProject(project)">
-    </project>
-    <div class="flex justify-center items-center">
-      <button mat-flat-button>More projects</button>
-    </div>
-  </div>
+
+  <projects [projects]="projects$ | async"></projects>
+
 </div>
 
 <div class="section">
@@ -34,6 +28,6 @@
 <div class="section">
   <header title="Education"></header>
   <mat-accordion>
-    <!--<education *ngFor="let education of educations" [education]="education"></education>-->
+    <education *ngFor="let education of educations$ | async" [education]="education"></education>
   </mat-accordion>
 </div>

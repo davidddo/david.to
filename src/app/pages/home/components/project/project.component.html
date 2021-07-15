@@ -1,11 +1,17 @@
 <mat-card class="border box-border rounded-2xl min-h-full p-0 overflow-hidden cursor-pointer"
   (click)="onNavigate.emit()">
-  <div class="flex justify-center items-center h-40 bg-opacity-80 rounded-t-2xl {{project.backgroundClass}}">
-    <img [src]="project.logo" width="100" height="100" />
+  <div class="flex justify-center items-center h-40 bg-opacity-80 rounded-t-2xl" [ngStyle]="getBackgroundStyle()">
+    <img *ngIf="project" [src]="project.logo" width="100" height="100" (load)="onImageLoad($event)"
+      [ngClass]="{'loaded': imageLoaded }" />
   </div>
-  <mat-card-title class="text-gray-800 opacity-90">{{ project.name }}</mat-card-title>
-  <mat-card-subtitle class="m-4 text-gray-500 font-light">{{ project.subtitle }}</mat-card-subtitle>
+  <mat-card-title class="text-gray-800 opacity-90">
+    <ng-container *ngIf="!project; else name">
+      <shimmer></shimmer>
+    </ng-container>
+    <ng-template #name>{{ project.name }}</ng-template>
+  </mat-card-title>
+  <mat-card-subtitle class="m-4 text-gray-500 font-light">{{ project?.subtitle }}</mat-card-subtitle>
   <mat-card-content class="m-4">
-    <techstack-chips></techstack-chips>
+    <technology-chips [technologies]="project?.technologies"></technology-chips>
   </mat-card-content>
 </mat-card>

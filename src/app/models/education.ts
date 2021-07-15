@@ -5,5 +5,6 @@ export interface Education {
   name: string;
   type: string;
   logo?: string;
+  position: number;
   dateRange: DateRange;
 }
