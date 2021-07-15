@@ -1,4 +1,3 @@
-import { fn } from '@angular/compiler/src/output/output_ast';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action, ActionCreator, Creator } from '@ngrx/store';
 import { FunctionWithParametersType } from '@ngrx/store/src/models';
@@ -49,16 +48,11 @@ const getOnCallbackFn = <T, A>(
   type: keyof OnCallbacks<T> = 'success',
 ) => {
   return (response: T) => {
-    if (typeof on === 'function') {
-      const onFn = on(action)[type];
-      return type === 'cache' || typeof onFn !== 'function'
-        ? onFn
-        : onFn(response);
-    }
+    const onFns = typeof on === 'function' ? on(action) : on;
+    const onFn = onFns[type];
 
-    const onFn = on[type];
     return type === 'cache' || typeof onFn !== 'function'
-      ? on[type]
+      ? (onFn as Action)
       : onFn(response);
   };
 };
@@ -79,13 +73,14 @@ export const createGenericEffect = <
       return (typeof method === 'function' ? method(action) : method).pipe(
         delay(options?.delay ?? 250),
         map(getOnCallbackFn(on, action)),
-        catchError(response =>
-          of(getOnCallbackFn(on, action, 'failure')(response)),
-        ),
+        catchError(response => {
+          console.log(response);
+          return of(getOnCallbackFn(on, action, 'failure')(response));
+        }),
       );
     };
 
-    return createEffect(
+    const effect = createEffect(
       () => {
         if (withCaching) {
           return actions$.pipe(
@@ -100,9 +95,11 @@ export const createGenericEffect = <
               ),
             ),
             switchMap(([action, cached]) => {
-              return cached
-                ? of(getOnCallbackFn(on, action, 'cache'))
+              const action$ = cached
+                ? of(getOnCallbackFn(on, action, 'cache')(undefined))
                 : apiCall$(action);
+
+              return action$;
             }),
           );
         }
@@ -111,5 +108,7 @@ export const createGenericEffect = <
       },
       { dispatch: options?.dispatch ?? true },
     );
+
+    return effect;
   };
 };

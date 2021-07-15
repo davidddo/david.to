@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { ProjectsEffects } from './projects.effects';
-import { featureKey, reducer } from './projects.reducer';
 import { ProjectsService } from './projects.service';
+import * as fromProjects from './projects.reducer';
 
 @NgModule({
   imports: [
-    StoreModule.forFeature(featureKey, reducer),
+    StoreModule.forFeature(fromProjects.featureKey, fromProjects.reducer),
     EffectsModule.forFeature([ProjectsEffects]),
   ],
-  providers: [ProjectsService],
+  //providers: [ProjectsService],
 })
 export class ProjectsStoreModule {}

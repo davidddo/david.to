@@ -3,7 +3,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@website/environments/environment';
-import { ROOT_REDUCERS, ProjectsStoreModule } from './store';
+import { ROOT_REDUCERS } from './store';
+import { ProjectsStoreModule } from './store/projects';
 
 @NgModule({
   imports: [

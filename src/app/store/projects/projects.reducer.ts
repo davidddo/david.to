@@ -6,8 +6,8 @@ import {
 } from '@ngrx/store';
 import { createEntityAdapter, EntityState } from '@ngrx/entity';
 import { Project } from '@website/models';
-import * as fromRoot from '@website/store';
 import { ProjectsAction } from './projects.actions';
+import * as fromRoot from '@website/store';
 
 export const featureKey = 'projects';
 
@@ -32,9 +32,9 @@ export const reducer = createReducer(
     imageUploading: false,
   }),
   on(ProjectsAction.loadProjects, state => ({ ...state, loading: true })),
-  on(ProjectsAction.loadProjectsSuccess, (state, { projects }) =>
-    adapter.setAll(projects, { ...state, loading: false, loaded: true }),
-  ),
+  on(ProjectsAction.loadProjectsSuccess, (state, { projects }) => {
+    return adapter.setAll(projects, { ...state, loading: false, loaded: true });
+  }),
   on(
     ProjectsAction.loadProjectsCache,
     ProjectsAction.loadProjectsFailure,
