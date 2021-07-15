@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Hochschule der Medien Stuttgart",
+    "type": "Bachelor of Science (Media Informatics)",
+    "logo": "assets/logos/hdm.png",
+    "position": 1,
+    "dateRange": {
+      "start": "2018",
+      "current": true
+    }
+  },
+  {
+    "name": "IT.Schule Stuttgart",
+    "type": "University entrance qualification",
+    "logo": "assets/logos/its.png",
+    "position": 2,
+    "dateRange": {
+      "start": "Sep. 2015",
+      "end": "Jul. 2017"
+    }
+  },
+  {
+    "name": "Rober-Koch-Realschule",
+    "type": "Secondary school leaving certificate",
+    "position": 3,
+    "dateRange": {
+      "start": "Sep. 2009",
+      "end": "Jul. 2015"
+    }
+  },
+  {
+    "name": "Pestalozzischule",
+    "type": "Primary school",
+    "position": 4,
+    "dateRange": {
+      "start": "Sep. 2005",
+      "end": "Jul. 2009"
+    }
+  }
+]
