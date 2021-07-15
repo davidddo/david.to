@@ -19,7 +19,7 @@ export class ExperiencesEffects {
       cache: EducationsAction.loadEducationsCache(),
     },
     this.store.select(fromExperiences.selectIsLoaded),
-  )(this.actions$);
+  )(this.actions$, { delay: 250 });
 
   constructor(
     private actions$: Actions,

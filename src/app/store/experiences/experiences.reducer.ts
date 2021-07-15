@@ -13,6 +13,7 @@ export const featureKey = 'experiences';
 
 export const adapter = createEntityAdapter<WorkExperience>({
   selectId: experience => experience.id,
+  sortComparer: (a, b) => a.position - b.position,
 });
 
 export interface ExperiencesState extends DefaultEntityState<WorkExperience> {}
@@ -49,12 +50,8 @@ export const selectExperiencesState = createFeatureSelector<
   ExperiencesState
 >(featureKey);
 
-export const {
-  selectIds: selectExperienceIds,
-  selectEntities: selectExperienceEntities,
-  selectAll: selectAllExperiences,
-  selectTotal: selectExperiencesTotal,
-} = adapter.getSelectors(selectExperiencesState);
+export const { selectIds, selectEntities, selectAll, selectTotal } =
+  adapter.getSelectors(selectExperiencesState);
 
 export const selectIsLoading = createLoadingSelector(selectExperiencesState);
 export const selectIsLoaded = createLoadedSelector(selectExperiencesState);

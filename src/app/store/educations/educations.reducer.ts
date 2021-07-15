@@ -13,6 +13,7 @@ export const featureKey = 'educations';
 
 export const adapter = createEntityAdapter<Education>({
   selectId: education => education.id,
+  sortComparer: (a, b) => a.position - b.position,
 });
 
 export interface EducationsState extends DefaultEntityState<Education> {}
@@ -49,12 +50,8 @@ export const selectEducationsState = createFeatureSelector<
   EducationsState
 >(featureKey);
 
-export const {
-  selectIds: selectEducationIds,
-  selectEntities: selectEducationEntities,
-  selectAll: selectAllEducations,
-  selectTotal: selectEducationsTotal,
-} = adapter.getSelectors(selectEducationsState);
+export const { selectIds, selectEntities, selectAll, selectTotal } =
+  adapter.getSelectors(selectEducationsState);
 
 export const selectIsLoading = createLoadingSelector(selectEducationsState);
 export const selectIsLoaded = createLoadedSelector(selectEducationsState);

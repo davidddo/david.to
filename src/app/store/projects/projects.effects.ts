@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Actions } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { createGenericEffect } from '@website/shared/utils';
 import { ProjectsAction } from './projects.actions';
@@ -17,7 +17,7 @@ export class ProjectsEffects {
       cache: ProjectsAction.loadProjectsCache(),
     },
     this.store.select(fromProjects.selectIsLoaded),
-  )(this.actions$);
+  )(this.actions$, { delay: 250 });
 
   constructor(
     private actions$: Actions,
