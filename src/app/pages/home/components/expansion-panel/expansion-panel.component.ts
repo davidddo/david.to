@@ -32,6 +32,7 @@ export class ExpansionPanelComponent implements OnInit, OnDestroy {
 
   isMobile$: Observable<boolean>;
   open: boolean = false;
+  imageLoaded: boolean = false;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
@@ -44,5 +45,9 @@ export class ExpansionPanelComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  onImageLoaded() {
+    this.imageLoaded = true;
   }
 }

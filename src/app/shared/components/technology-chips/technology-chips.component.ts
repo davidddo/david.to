@@ -23,9 +23,9 @@ export class TechnologyChipsComponent {
     const random = Math.floor(Math.random() * Object.keys(colors).length);
     const color = Object.keys(colors)[random];
 
-    /*if (this.usedColors.includes(color)) {
+    if (this.usedColors.includes(color)) {
       return this.getRandomColor();
-    }*/
+    }
 
     this.usedColors.push(color);
     return color;

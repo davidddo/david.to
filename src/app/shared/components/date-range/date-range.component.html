@@ -1,4 +1,4 @@
-<span class="text-gray-500">{{ dateRange.start }}</span>
+<span class="text-gray-500">{{ dateRange?.start }}</span>
 <span *ngIf="dateRange?.end || dateRange?.current"> - </span>
 <span *ngIf="dateRange?.current" class="font-medium text-gray-500">Now</span>
-<span *ngIf="!dateRange?.current && dateRange?.end" class="text-gray-500">{{ dateRange.end }}</span>
+<span *ngIf="!dateRange?.current && dateRange?.end" class="text-gray-500">{{ dateRange?.end }}</span>

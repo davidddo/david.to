@@ -8,6 +8,7 @@ import {
   HistoryItemComponent,
   HistoryContentComponent,
   DateRangeComponent,
+  FadeContainerComponent,
   SocialButtonComponent,
   TechnologyChipsComponent,
   ShimmerComponent,
@@ -17,6 +18,7 @@ import {
   declarations: [
     AvatarComponent,
     DateRangeComponent,
+    FadeContainerComponent,
     HistoryComponent,
     HistoryListComponent,
     HistoryItemComponent,
@@ -29,6 +31,7 @@ import {
   exports: [
     AvatarComponent,
     DateRangeComponent,
+    FadeContainerComponent,
     HistoryComponent,
     HistoryListComponent,
     HistoryItemComponent,

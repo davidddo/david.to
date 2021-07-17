@@ -29,17 +29,17 @@ const icons = [
   animations: [
     trigger('fade', [
       transition(':enter', [
-        style({ height: 0, opacity: 0 }),
+        style({ height: '0px', opacity: 0 }),
         animate(
           '280ms cubic-bezier(0.4, 0, 0.2, 1)',
-          style({ height: 64, opacity: 1 }),
+          style({ height: '64px', opacity: 1 }),
         ),
       ]),
       transition(':leave', [
-        style({ height: 64, opacity: 1 }),
+        style({ height: '64px', opacity: 1 }),
         animate(
           '280ms cubic-bezier(0.4, 0, 0.2, 1)',
-          style({ height: 0, opacity: 0 }),
+          style({ height: '0px', opacity: 0 }),
         ),
       ]),
     ]),
@@ -49,8 +49,8 @@ const icons = [
 export class AppComponent {
   showHeader: boolean = false;
 
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll($event) {
+  @HostListener('window:scroll')
+  onWindowScroll() {
     if (window.scrollY >= 280) {
       this.showHeader = true;
     } else {

@@ -1,0 +1,9 @@
+<ng-container *ngIf="educations.length === 0">
+  <education></education>
+  <education></education>
+  <education></education>
+  <education></education>
+</ng-container>
+<mat-accordion>
+  <education *ngFor="let education of educations" [education]="education"></education>
+</mat-accordion>

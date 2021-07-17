@@ -1,4 +1,12 @@
 import {
+  animate,
+  group,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
@@ -11,17 +19,38 @@ import { colors, Project } from '@website/models';
   selector: 'project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss'],
+  animations: [
+    trigger('imageAnimation', [
+      state('false', style({ opacity: 0, filter: 'grayscale(64%)' })),
+      state('true', style({ opacity: 1, filter: 'grayscale(0%)' })),
+      transition('false => true', [
+        group([
+          animate(
+            '120ms ease-in',
+            style({
+              opacity: 1,
+            }),
+          ),
+          animate(
+            '220ms ease-in',
+            style({
+              filter: 'grayscale(0%)',
+            }),
+          ),
+        ]),
+      ]),
+    ]),
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectComponent {
   @Input() project: Project;
   @Output() onNavigate: EventEmitter<void> = new EventEmitter<void>();
 
-  imageLoaded: boolean;
+  imageLoaded: boolean = false;
 
-  onImageLoad(event: Event) {
+  onImageLoad() {
     this.imageLoaded = true;
-    console.log(event);
   }
 
   getBackgroundStyle() {

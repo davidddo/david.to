@@ -1,12 +1,11 @@
 @use '~@angular/material' as mat;
 
-.social-button {
+a {
   @include mat.elevation-transition();
 
   box-sizing: content-box;
   border: 1px solid #f7f8f9;
   box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 6px 6px -1px rgb(8 11 14 / 10%);
-  margin: 0 8px;
 
   &.flat {
     box-shadow: none;

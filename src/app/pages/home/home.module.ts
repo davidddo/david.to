@@ -5,11 +5,13 @@ import { SharedModule } from '@website/shared';
 import { HomeComponent } from './container';
 import {
   EducationComponent,
+  EducationsComponent,
   ExpansionPanelComponent,
   HeaderComponent,
   ProjectComponent,
   ProjectsComponent,
   WorkExperienceComponent,
+  WorkExperiencesComponent,
 } from './components';
 import { HomeRoutingModule } from './home-routing.module';
 
@@ -18,11 +20,13 @@ import { HomeRoutingModule } from './home-routing.module';
   declarations: [
     HomeComponent,
     EducationComponent,
+    EducationsComponent,
     ExpansionPanelComponent,
     HeaderComponent,
     ProjectComponent,
     ProjectsComponent,
     WorkExperienceComponent,
+    WorkExperiencesComponent,
   ],
 })
 export class HomeModule {}

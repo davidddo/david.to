@@ -1,14 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Project } from '@website/models';
 
 @Component({
   selector: 'projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
   @Input() projects: Project[];
-  constructor() {}
-
-  ngOnInit(): void {}
 }

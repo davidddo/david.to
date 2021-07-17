@@ -13,12 +13,39 @@
   background-color: #fff;
   box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 6px 6px -1px rgb(8 11 14 / 10%);
 
+  @media screen and (max-width: 445px) {
+    .secondary {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .primary {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
   .avatar {
     margin-right: 1rem;
   }
 
-  a {
+  .secondary .social-button {
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  .primary .social-button {
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .social-button {
     box-shadow: none;
+    margin: 0 8px;
 
     &:hover {
       box-shadow: none;
