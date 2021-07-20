@@ -5,7 +5,7 @@ export interface WorkExperience {
   type: string;
   company: string;
   description: string;
-  logo: string;
+  img: string;
   position: number;
   dateRange: DateRange;
   sections?: WorkSection[];
@@ -14,4 +14,5 @@ export interface WorkExperience {
 export interface WorkSection {
   dateRange: DateRange;
   position: string;
+  description: string;
 }
