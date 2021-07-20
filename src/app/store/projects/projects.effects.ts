@@ -17,7 +17,7 @@ export class ProjectsEffects {
       cache: ProjectsAction.loadProjectsCache(),
     },
     this.store.select(fromProjects.selectIsLoaded),
-  )(this.actions$, { delay: 250 });
+  )(this.actions$);
 
   constructor(
     private actions$: Actions,
