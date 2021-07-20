@@ -1,15 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Education, Project, WorkExperience } from '@website/models';
 import { ProjectsAction } from '@website/store/projects';
+import { ExperiencesAction } from '@website/store/experiences';
+import { EducationsAction } from '@website/store/educations';
 import * as fromProjects from '@website/store/projects';
 import * as fromExperiences from '@website/store/experiences';
 import * as fromEducations from '@website/store/educations';
-import { ExperiencesAction } from '@website/store/experiences';
-import { EducationsAction } from '@website/store/educations';
-import { startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'home',
@@ -23,7 +21,6 @@ export class HomeComponent implements OnInit {
   educations$: Observable<Education[]>;
 
   constructor(
-    private router: Router,
     private store: Store<
       fromProjects.State & fromExperiences.State & fromEducations.State
     >,
@@ -37,9 +34,5 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(ProjectsAction.loadProjects());
     this.store.dispatch(ExperiencesAction.loadExperiences());
     this.store.dispatch(EducationsAction.loadEducations());
-  }
-
-  openProject(project: Project) {
-    this.router.navigate([project.url]);
   }
 }

@@ -9,4 +9,5 @@ import { Education } from '@website/models';
 })
 export class EducationsComponent {
   @Input() educations: Education[];
+  placeholderEducations = 4;
 }

@@ -1,9 +1,8 @@
-<mat-card class="border box-border rounded-2xl min-h-full p-0 overflow-hidden cursor-pointer"
-  (click)="onNavigate.emit()">
+<mat-card class="border box-border rounded-2xl min-h-full p-0 overflow-hidden cursor-pointer">
   <div class="img-container flex justify-center items-center h-40 bg-opacity-80 rounded-t-2xl relative">
-    <div class="flex justify-center items-center w-full h-full" [@imageAnimation]="imageLoaded"
-      [ngStyle]="getBackgroundStyle()">
-      <img *ngIf="project" [src]="project.logo" width="100" height="100" loading="lazy" (load)="onImageLoad()" />
+    <mat-icon *ngIf="isExternUrl" class="absolute top-0 right-0 m-4 opacity-0 text-white">open_in_new</mat-icon>
+    <div class="flex justify-center items-center w-full h-full" [@fade]="imageLoaded" [ngStyle]="getBackgroundStyle()">
+      <img *ngIf="project" [src]="project.img" width="100" height="100" loading="lazy" (load)="onImageLoad()" />
     </div>
     <shimmer *ngIf="!imageLoaded"></shimmer>
   </div>

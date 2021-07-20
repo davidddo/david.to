@@ -3,6 +3,7 @@ export * from './educations';
 export * from './expansion-panel';
 export * from './header';
 export * from './project';
+export * from './project-placeholder';
 export * from './projects';
 export * from './work-experience';
 export * from './work-experiences';

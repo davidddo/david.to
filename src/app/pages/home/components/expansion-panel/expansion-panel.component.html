@@ -5,7 +5,7 @@
         <img *ngIf="img" [src]="img" height="40" width="40" (load)="onImageLoaded()" />
         <shimmer *ngIf="!imageLoaded && !img"></shimmer>
       </div>
-      <div class="flex flex-col min-w justify-center">
+      <div class="flex flex-col justify-center">
         <span class="title font-medium text-gray-800">
           <ng-container *ngIf="!title">
             <shimmer></shimmer>

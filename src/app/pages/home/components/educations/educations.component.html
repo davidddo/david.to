@@ -1,8 +1,5 @@
 <ng-container *ngIf="educations.length === 0">
-  <education></education>
-  <education></education>
-  <education></education>
-  <education></education>
+  <education *ngFor="let index of 4 | fill"></education>
 </ng-container>
 <mat-accordion>
   <education *ngFor="let education of educations" [education]="education"></education>
