@@ -3,7 +3,7 @@
     "type": "Working Student",
     "company": "MHP Management- und IT-Beratung",
     "description": "",
-    "logo": "assets/logos/mhp.png",
+    "img": "assets/logos/mhp.png",
     "position": 1,
     "dateRange": {
       "start": "Mar. 2020",
@@ -30,7 +30,7 @@
     "type": "Working Student",
     "company": "Benchkram Software GmbH",
     "description": "App development with Flutter",
-    "logo": "assets/logos/benchkram.png",
+    "img": "assets/logos/benchkram.png",
     "position": 2,
     "dateRange": {
       "start": "Nov. 2019",
@@ -41,7 +41,7 @@
     "type": "Research Assistant",
     "company": "Hochschule der Medien Stuttgart",
     "description": "Content-Management with Zope",
-    "logo": "assets/logos/hdm.png",
+    "img": "assets/logos/hdm.png",
     "position": 3,
     "dateRange": {
       "start": "Nov. 2018",
@@ -52,7 +52,7 @@
     "type": "Intern",
     "company": "Dekra SE",
     "description": "EUC & Network Management",
-    "logo": "assets/logos/dekra.png",
+    "img": "assets/logos/dekra.png",
     "position": 4,
     "dateRange": {
       "start": "Jan. 2016"
@@ -62,10 +62,30 @@
     "type": "Intern",
     "company": "Bachmann GmbH",
     "description": "Anwendungsentwicklung",
-    "logo": "assets/logos/bachmann.png",
+    "img": "assets/logos/bachmann.png",
     "position": 5,
     "dateRange": {
       "start": "Apr. 2016"
+    }
+  },
+  {
+    "type": "Intern",
+    "company": "davit GmbH",
+    "description": "Anwendungsentwicklung",
+    "img": "assets/logos/bachmann.png",
+    "position": 6,
+    "dateRange": {
+      "start": "Apr. 2014"
+    }
+  },
+  {
+    "type": "Intern",
+    "company": "Dekra",
+    "description": "Anwendungsentwicklung",
+    "img": "assets/logos/dekra.png",
+    "position": 7,
+    "dateRange": {
+      "start": "Apr. 2014"
     }
   }
 ]
