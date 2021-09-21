@@ -12,33 +12,31 @@ import {
   SocialButtonComponent,
   TechnologyChipsComponent,
   ShimmerComponent,
+  ExpansionPanelComponent,
+  HeaderComponent,
 } from './components';
+import { FillPipe } from './pipes';
+
+const components = [
+  AvatarComponent,
+  DateRangeComponent,
+  ExpansionPanelComponent,
+  FadeContainerComponent,
+  HeaderComponent,
+  HistoryComponent,
+  HistoryListComponent,
+  HistoryItemComponent,
+  HistoryContentComponent,
+  ShimmerComponent,
+  SocialButtonComponent,
+  TechnologyChipsComponent,
+];
+
+const pipes = [FillPipe];
 
 @NgModule({
-  declarations: [
-    AvatarComponent,
-    DateRangeComponent,
-    FadeContainerComponent,
-    HistoryComponent,
-    HistoryListComponent,
-    HistoryItemComponent,
-    HistoryContentComponent,
-    ShimmerComponent,
-    SocialButtonComponent,
-    TechnologyChipsComponent,
-  ],
+  declarations: [...components, ...pipes],
   imports: [CommonModule, MaterialModule],
-  exports: [
-    AvatarComponent,
-    DateRangeComponent,
-    FadeContainerComponent,
-    HistoryComponent,
-    HistoryListComponent,
-    HistoryItemComponent,
-    HistoryContentComponent,
-    ShimmerComponent,
-    SocialButtonComponent,
-    TechnologyChipsComponent,
-  ],
+  exports: [...components, ...pipes],
 })
 export class SharedModule {}
