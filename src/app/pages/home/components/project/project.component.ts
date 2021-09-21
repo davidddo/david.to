@@ -48,13 +48,12 @@ export class ProjectComponent {
     return { 'background-color': colors[this.project.color][100] };
   }
 
-  openProject() {
+  openProject(event) {
     if (!this.project?.url) {
       return;
     }
 
-    if (this.isExternUrl) {
-    }
+    this.router.navigate(['projects', this.project.url]);
   }
 
   get isExternUrl() {

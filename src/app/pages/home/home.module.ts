@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveComponentModule } from '@ngrx/component';
 import { MaterialModule } from '@website/material';
 import { SharedModule } from '@website/shared';
 import { HomeComponent } from './container';
 import {
   EducationComponent,
   EducationsComponent,
-  ExpansionPanelComponent,
-  HeaderComponent,
   ProjectComponent,
-  ProjectPlaceholderComponent,
   ProjectsComponent,
   WorkExperienceComponent,
   WorkExperiencesComponent,
@@ -17,15 +15,18 @@ import {
 import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
-  imports: [CommonModule, MaterialModule, SharedModule, HomeRoutingModule],
+  imports: [
+    CommonModule,
+    ReactiveComponentModule,
+    MaterialModule,
+    SharedModule,
+    HomeRoutingModule,
+  ],
   declarations: [
     HomeComponent,
     EducationComponent,
     EducationsComponent,
-    ExpansionPanelComponent,
-    HeaderComponent,
     ProjectComponent,
-    ProjectPlaceholderComponent,
     ProjectsComponent,
     WorkExperienceComponent,
     WorkExperiencesComponent,
