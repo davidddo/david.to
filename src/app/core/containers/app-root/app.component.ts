@@ -3,24 +3,16 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
+  OnDestroy,
+  OnInit,
 } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-
-const icons = [
-  {
-    tag: 'github',
-    file: 'github.svg',
-  },
-  {
-    tag: 'linkedin',
-    file: 'linkedin.svg',
-  },
-  {
-    tag: 'xing',
-    file: 'xing.svg',
-  },
-];
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AppHeaderService } from '@website/core/services';
+import { Observable } from 'rxjs';
+import * as fromRoot from '@website/store';
 
 @Component({
   selector: 'app-root',
@@ -47,7 +39,8 @@ const icons = [
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  showHeader: boolean = false;
+  showHeader$: Observable<boolean>;
+  showHeader: boolean;
 
   @HostListener('window:scroll')
   onWindowScroll() {
@@ -59,16 +52,11 @@ export class AppComponent {
   }
 
   constructor(
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer,
+    private store: Store<fromRoot.State>,
+    private router: Router,
+
+    private appHeaderService: AppHeaderService,
   ) {
-    for (const icon of icons) {
-      this.matIconRegistry.addSvgIcon(
-        icon.tag,
-        this.domSanitizer.bypassSecurityTrustResourceUrl(
-          `../assets/icons/${icon.file}`,
-        ),
-      );
-    }
+    // this.showHeader$ =
   }
 }
