@@ -6,8 +6,12 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./pages/home/home.module').then(m => m.HomeModule),
-    pathMatch: 'full',
   },
+  /*{
+    path: 'projects',
+    loadChildren: () =>
+      import('./pages/projects/projects.module').then(m => m.ProjectsModule),
+  },*/
 ];
 
 @NgModule({

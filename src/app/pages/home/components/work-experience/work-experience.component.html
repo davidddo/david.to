@@ -6,6 +6,7 @@
       <div class="flex flex-col">
         <span class="font-medium text-gray-800">{{ section?.position }}</span>
         <date-range [dateRange]="experience?.dateRange"></date-range>
+        <span *ngIf="section?.description" class="mt-2 mb-2 text-gray-500 font-light">{{ section.description }}</span>
       </div>
     </history-item>
   </history-list>
