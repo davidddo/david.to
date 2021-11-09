@@ -12,13 +12,15 @@
     "sections": [
       {
         "position": "Working Student",
+        "description": "description",
         "dateRange": {
           "start": "Mar. 2020",
           "current": true
         }
       },
       {
-        "position": "Intern",
+        "position": "Internship",
+        "description": "description",
         "dateRange": {
           "start": "Mar. 2020",
           "end": "Sep. 2020"
@@ -29,7 +31,7 @@
   {
     "type": "Working Student",
     "company": "Benchkram Software GmbH",
-    "description": "App development with Flutter",
+    "description": "Build a cross platform prototype for plyd.io",
     "img": "assets/logos/benchkram.png",
     "position": 2,
     "dateRange": {
@@ -49,7 +51,7 @@
     }
   },
   {
-    "type": "Intern",
+    "type": "Internship",
     "company": "Dekra SE",
     "description": "EUC & Network Management",
     "img": "assets/logos/dekra.png",
@@ -59,33 +61,13 @@
     }
   },
   {
-    "type": "Intern",
+    "type": "Internship",
     "company": "Bachmann GmbH",
     "description": "Anwendungsentwicklung",
     "img": "assets/logos/bachmann.png",
     "position": 5,
     "dateRange": {
       "start": "Apr. 2016"
-    }
-  },
-  {
-    "type": "Intern",
-    "company": "davit GmbH",
-    "description": "Anwendungsentwicklung",
-    "img": "assets/logos/bachmann.png",
-    "position": 6,
-    "dateRange": {
-      "start": "Apr. 2014"
-    }
-  },
-  {
-    "type": "Intern",
-    "company": "Dekra",
-    "description": "Anwendungsentwicklung",
-    "img": "assets/logos/dekra.png",
-    "position": 7,
-    "dateRange": {
-      "start": "Apr. 2014"
     }
   }
 ]

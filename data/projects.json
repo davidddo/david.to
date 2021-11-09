@@ -5,7 +5,7 @@
     "technologies": ["Angular", "NestJS", "MongoDB", "Redis"],
     "color": "Red",
     "img": "assets/logos/svv.png",
-    "url": "/svv-handball",
+    "url": "svv-handball",
     "position": 1
   },
   {
@@ -14,7 +14,7 @@
     "technologies": ["Flutter", "Firebase"],
     "color": "Red",
     "img": "assets/logos/svv.png",
-    "url": "/svv-handball",
+    "url": "svv-handball",
     "position": 2
   },
   {
