@@ -5,9 +5,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@website/environments/environment';
 import {
   ROOT_REDUCERS,
-  ProjectsStoreModule,
   ExperiencesStoreModule,
   EducationsStoreModule,
+  ProjectsStoreModule,
 } from './store';
 
 @NgModule({
@@ -25,9 +25,9 @@ import {
       name: 'Personal Website',
       logOnly: environment.production,
     }),
-    ProjectsStoreModule,
     ExperiencesStoreModule,
     EducationsStoreModule,
+    ProjectsStoreModule,
   ],
 })
 export class AppStoreModule {}
