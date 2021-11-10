@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import {
-  AngularFirestore,
-  AngularFirestoreCollection,
-} from '@angular/fire/firestore';
+import { collectionData, Firestore } from '@angular/fire/firestore';
+import { collection, CollectionReference } from '@firebase/firestore';
 import { Education } from '@website/models';
-import { mapDocuments } from '@website/shared/utils';
+import { firestoreConverter } from '@website/shared/utils';
 
 @Injectable({ providedIn: 'root' })
 export class EducationsService {
-  private educationsRef: AngularFirestoreCollection<Education>;
+  private collectionRef: CollectionReference<Education>;
 
-  constructor(private firestore: AngularFirestore) {
-    this.educationsRef = this.firestore.collection('educations');
+  constructor(firestore: Firestore) {
+    this.collectionRef = collection(firestore, 'educations').withConverter(
+      firestoreConverter<Education>(),
+    );
   }
 
   fetchEducations() {
-    return this.educationsRef.snapshotChanges().pipe(mapDocuments());
+    return collectionData(this.collectionRef);
   }
 }

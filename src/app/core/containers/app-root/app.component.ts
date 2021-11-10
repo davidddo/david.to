@@ -3,16 +3,8 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
-  OnDestroy,
-  OnInit,
 } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { AppHeaderService } from '@website/core/services';
 import { Observable } from 'rxjs';
-import * as fromRoot from '@website/store';
 
 @Component({
   selector: 'app-root',
@@ -49,14 +41,5 @@ export class AppComponent {
     } else {
       this.showHeader = false;
     }
-  }
-
-  constructor(
-    private store: Store<fromRoot.State>,
-    private router: Router,
-
-    private appHeaderService: AppHeaderService,
-  ) {
-    // this.showHeader$ =
   }
 }

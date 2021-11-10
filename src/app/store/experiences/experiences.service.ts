@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import {
-  AngularFirestore,
-  AngularFirestoreCollection,
-} from '@angular/fire/firestore';
+import { collectionData, Firestore } from '@angular/fire/firestore';
+import { collection, CollectionReference } from '@firebase/firestore';
 import { WorkExperience } from '@website/models';
-import { mapDocuments } from '@website/shared/utils';
+import { firestoreConverter } from '@website/shared/utils';
 
 @Injectable({ providedIn: 'root' })
 export class ExperiencesService {
-  private experiencesRef: AngularFirestoreCollection<WorkExperience>;
+  private collectionRef: CollectionReference<WorkExperience>;
 
-  constructor(private firestore: AngularFirestore) {
-    this.experiencesRef = this.firestore.collection('experiences');
+  constructor(firestore: Firestore) {
+    this.collectionRef = collection(firestore, 'experiences').withConverter(
+      firestoreConverter<WorkExperience>(),
+    );
   }
 
   fetchWorkExperiences() {
-    return this.experiencesRef.snapshotChanges().pipe(mapDocuments());
+    return collectionData(this.collectionRef);
   }
 }

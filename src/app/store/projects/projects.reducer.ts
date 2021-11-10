@@ -41,12 +41,10 @@ export const reducer = createReducer(
   ),
 );
 
-export const selectProjectsState = createFeatureSelector<State, ProjectsState>(
-  featureKey,
-);
+const featureSelector = createFeatureSelector<ProjectsState>(featureKey);
 
 export const { selectIds, selectEntities, selectAll, selectTotal } =
-  adapter.getSelectors(selectProjectsState);
+  adapter.getSelectors(featureSelector);
 
-export const selectIsLoading = createLoadingSelector(selectProjectsState);
-export const selectIsLoaded = createLoadedSelector(selectProjectsState);
+export const selectIsLoading = createLoadingSelector(featureSelector);
+export const selectIsLoaded = createLoadedSelector(featureSelector);

@@ -1,8 +1,8 @@
-import { DocumentChangeAction } from '@angular/fire/firestore';
+import { FirestoreDataConverter } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export const mapDocumentWithId = <T>(action: DocumentChangeAction<T>): T => {
+/*export const mapDocumentWithId = <T>(action: DocumentChangeAction<T>): T => {
   const id = action.payload.doc.id;
   const data = action.payload.doc.data();
 
@@ -21,5 +21,15 @@ export const mapDocuments = () => {
         }),
       ),
     );
+  };
+};*/
+
+export const firestoreConverter = <T>(): FirestoreDataConverter<T> => {
+  return {
+    toFirestore: (data: T) => data,
+    fromFirestore: (snapsot, options) => {
+      const doc = { ...snapsot.data(), id: snapsot.id } as unknown;
+      return doc as T;
+    },
   };
 };

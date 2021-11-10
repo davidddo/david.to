@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
-import {
-  AngularFirestore,
-  AngularFirestoreCollection,
-} from '@angular/fire/firestore';
+import { collectionData, Firestore } from '@angular/fire/firestore';
+import { collection, CollectionReference } from '@firebase/firestore';
 import { Project } from '@website/models';
-import { mapDocuments } from '@website/shared/utils';
+import { firestoreConverter } from '@website/shared/utils';
+import { tap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class ProjectsService {
-  private projectsRef: AngularFirestoreCollection<Project>;
+  private collectionRef: CollectionReference<Project>;
 
-  constructor(private firestore: AngularFirestore) {
-    this.projectsRef = this.firestore.collection('projects');
+  constructor(firestore: Firestore) {
+    this.collectionRef = collection(firestore, 'projects').withConverter(
+      firestoreConverter<Project>(),
+    );
   }
 
   fetchProjects() {
-    return this.projectsRef.snapshotChanges().pipe(mapDocuments());
+    return collectionData(this.collectionRef).pipe(tap(console.log));
   }
 }

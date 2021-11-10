@@ -7,7 +7,6 @@ import {
   trigger,
 } from '@angular/animations';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { AngularFireStorage } from '@angular/fire/storage';
 import { Router } from '@angular/router';
 import { colors, Project } from '@website/models';
 
@@ -37,7 +36,7 @@ export class ProjectComponent {
   @Input() project: Project | undefined;
   imageLoaded: boolean = false;
 
-  constructor(private router: Router, private storage: AngularFireStorage) {}
+  constructor(private router: Router) {}
 
   onImageLoad() {
     this.imageLoaded = true;

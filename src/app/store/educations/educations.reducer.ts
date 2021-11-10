@@ -45,13 +45,10 @@ export const reducer = createReducer(
   ),
 );
 
-export const selectEducationsState = createFeatureSelector<
-  State,
-  EducationsState
->(featureKey);
+const featureSelector = createFeatureSelector<EducationsState>(featureKey);
 
 export const { selectIds, selectEntities, selectAll, selectTotal } =
-  adapter.getSelectors(selectEducationsState);
+  adapter.getSelectors(featureSelector);
 
-export const selectIsLoading = createLoadingSelector(selectEducationsState);
-export const selectIsLoaded = createLoadedSelector(selectEducationsState);
+export const selectIsLoading = createLoadingSelector(featureSelector);
+export const selectIsLoaded = createLoadedSelector(featureSelector);

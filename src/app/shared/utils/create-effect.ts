@@ -74,7 +74,6 @@ export const createGenericEffect = <
         delay(options?.delay ?? 250),
         map(getOnCallbackFn(on, action)),
         catchError(response => {
-          console.log(response);
           return of(getOnCallbackFn(on, action, 'failure')(response));
         }),
       );

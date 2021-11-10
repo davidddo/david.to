@@ -5,12 +5,10 @@ import { MaterialModule } from '@website/material';
 import { SharedModule } from '@website/shared';
 import { AppFooterComponent, AppHeaderComponent } from './components';
 import { AppComponent } from './containers';
-import { AppHeaderService } from './services';
 
 @NgModule({
   declarations: [AppComponent, AppHeaderComponent, AppFooterComponent],
   imports: [CommonModule, RouterModule, MaterialModule, SharedModule],
   exports: [AppComponent],
-  providers: [AppHeaderService],
 })
 export class CoreModule {}
