@@ -21,6 +21,17 @@ $theme: mat.define-light-theme(
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer utilities {
+  .section {
+    width: 100%;
+    margin-bottom: 4rem;
+
+    .header {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
 :root {
   --primary: #1565c0;
   --accent: #e91e63;
@@ -39,17 +50,14 @@ $theme: mat.define-light-theme(
   --gray-700: #757575;
 }
 
-body {
-  display: flex;
-  user-select: none;
-}
-
 html,
 body {
   height: 100%;
 }
 
 body {
+  display: flex;
+  user-select: none;
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   overscroll-behavior: none;
