@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { createGenericEffect } from '@website/shared/utils';
+import { createGenericEffect } from '@website/store/utils';
 import { EducationsAction } from './educations.actions';
 import { EducationsService } from './educations.service';
 import * as fromExperiences from './educations.reducer';

@@ -1,8 +1,0 @@
-<ng-container *ngIf="educations$ | async as educations">
-  <ng-container *ngIf="educations.length === 0">
-    <education *ngFor="let index of placeholders | fill"></education>
-  </ng-container>
-  <mat-accordion>
-    <education *ngFor="let education of educations" [education]="education"></education>
-  </mat-accordion>
-</ng-container>

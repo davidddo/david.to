@@ -5,7 +5,7 @@ import {
   createLoadedSelector,
   createLoadingSelector,
   DefaultEntityState,
-} from '@website/shared/utils';
+} from '@website/store/utils';
 import { ProjectsAction } from './projects.actions';
 import * as fromRoot from '@website/store';
 

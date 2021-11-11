@@ -1,0 +1,61 @@
+:host {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.mat-toolbar {
+  height: 64px !important;
+  padding: 0;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 6px 6px -1px rgb(8 11 14 / 10%);
+
+  
+
+  @media screen and (max-width: 455px) {
+    .secondary {
+      display: none;
+      visibility: hidden;
+    }
+
+    .primary .social-button {
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .primary {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  .avatar {
+    margin-right: 1rem;
+  }
+
+  .secondary .social-button {
+    margin: 0 4px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .primary .social-button {
+    margin: 0 4px;
+  }
+
+  .social-button {
+    box-shadow: none;
+    margin: 0 8px;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}

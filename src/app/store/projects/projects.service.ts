@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { collectionData, Firestore } from '@angular/fire/firestore';
 import { collection, CollectionReference } from '@firebase/firestore';
 import { Project } from '@website/models';
-import { firestoreConverter } from '@website/shared/utils';
-import { tap } from 'rxjs/operators';
+import { firestoreConverter } from '@website/store/utils';
 
 @Injectable({ providedIn: 'root' })
 export class ProjectsService {
@@ -16,6 +15,6 @@ export class ProjectsService {
   }
 
   fetchProjects() {
-    return collectionData(this.collectionRef).pipe(tap(console.log));
+    return collectionData(this.collectionRef);
   }
 }

@@ -1,0 +1,21 @@
+<a [href]="project?.url" target="_blank">
+  <mat-card class="border box-border rounded-2xl min-h-full p-0 overflow-hidden cursor-pointer overflow-hidden">
+    <div class="img-container flex justify-center items-center h-40 bg-opacity-80 rounded-t-2xl relative">
+      <div class="flex justify-center items-center w-full h-full" [@fade]="imageLoaded"
+        [ngStyle]="getBackgroundStyle()">
+        <img *ngIf="project" [src]="project.img" width="100" height="100" loading="lazy" (load)="onImageLoad()" />
+      </div>
+      <shimmer *ngIf="!imageLoaded"></shimmer>
+    </div>
+    <mat-card-title class="text-gray-800 opacity-90">
+      <ng-container *ngIf="!project; else name">
+        <shimmer></shimmer>
+      </ng-container>
+      <ng-template #name>{{ project.name }}</ng-template>
+    </mat-card-title>
+    <mat-card-subtitle class="m-4 text-gray-500 font-light">{{ project?.subtitle }}</mat-card-subtitle>
+    <mat-card-content class="m-4">
+      <technology-chips [technologies]="project?.technologies"></technology-chips>
+    </mat-card-content>
+  </mat-card>
+</a>

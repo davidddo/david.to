@@ -3,10 +3,21 @@ import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
-import { CoreModule, AppComponent } from '@website/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppStoreModule } from './app-store.module';
-import { FirebaseModule } from './firebase.module';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
+import { environment } from '@website/environments/environment';
+import { ComponentsModule } from './components';
+import {
+  ROOT_REDUCERS,
+  ExperiencesStoreModule,
+  EducationsStoreModule,
+  ProjectsStoreModule,
+} from './store';
+import { AppComponent } from './app.component';
 
 const icons = [
   {
@@ -28,11 +39,28 @@ const icons = [
     HttpClientModule,
     BrowserAnimationsModule,
     BrowserModule,
-    FirebaseModule,
-    CoreModule,
-    AppStoreModule,
-    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideAnalytics(() => getAnalytics()),
+    StoreModule.forRoot(ROOT_REDUCERS, {
+      runtimeChecks: {
+        strictStateSerializability: true,
+        strictActionSerializability: false,
+        strictActionWithinNgZone: true,
+        strictActionTypeUniqueness: true,
+      },
+    }),
+    EffectsModule.forRoot(),
+    StoreDevtoolsModule.instrument({
+      name: 'Personal Website',
+      logOnly: environment.production,
+    }),
+    ExperiencesStoreModule,
+    EducationsStoreModule,
+    ProjectsStoreModule,
+    ComponentsModule,
   ],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {

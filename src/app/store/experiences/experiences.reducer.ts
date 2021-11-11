@@ -5,7 +5,7 @@ import {
   createLoadedSelector,
   createLoadingSelector,
   DefaultEntityState,
-} from '@website/shared/utils';
+} from '@website/store/utils';
 import { ExperiencesAction } from './experiences.actions';
 import * as fromRoot from '@website/store';
 

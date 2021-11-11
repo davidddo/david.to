@@ -1,0 +1,6 @@
+<div class="projects grid grid-cols-3 grid-row-2 gap-6">
+  <ng-container *ngIf="projects.length === 0">
+    <project *ngFor="let index of 6 | fill"></project>
+  </ng-container>
+  <project *ngFor="let project of projects" [project]="project"></project>
+</div>
