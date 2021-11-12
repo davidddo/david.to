@@ -1,7 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   HostListener,
 } from '@angular/core';
@@ -15,7 +14,6 @@ import { EducationsAction } from '@website/store/educations';
 import * as fromProjects from '@website/store/projects';
 import * as fromExperiences from '@website/store/experiences';
 import * as fromEducations from '@website/store/educations';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -50,7 +48,7 @@ export class AppComponent {
 
   @HostListener('window:scroll')
   onWindowScroll() {
-    if (window.scrollY >= 280) {
+    if (window.scrollY >= 156) {
       this.showHeader = true;
     } else {
       this.showHeader = false;
