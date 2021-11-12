@@ -9,7 +9,7 @@
     "test": "ng test",
     "seed:projects": "node ./tools/seed.js --collection projects --data ../data/projects.json --clear",
     "seed:work": "node ./tools/seed.js --collection experiences --data ../data/experiences.json --clear",
-    "seed:educations": "node ./tools/seed.js --educations experiences --data ../data/educations.json --clear"
+    "seed:educations": "node ./tools/seed.js --collection educations --data ../data/educations.json --clear"
   },
   "private": true,
   "dependencies": {
