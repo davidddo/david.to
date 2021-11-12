@@ -3,7 +3,7 @@
     "type": "Working Student",
     "company": "MHP Management- und IT-Beratung",
     "description": "",
-    "img": "assets/logos/mhp.png",
+    "img": "https://firebasestorage.googleapis.com/v0/b/david-tomschitz.appspot.com/o/logos%2Fmhp.png?alt=media&token=d84c033e-c129-4d23-a6b1-2346745d0e52",
     "position": 1,
     "dateRange": {
       "start": "Mar. 2020",
@@ -12,15 +12,13 @@
     "sections": [
       {
         "position": "Working Student",
-        "description": "description",
         "dateRange": {
-          "start": "Mar. 2020",
+          "start": "Sep. 2020",
           "current": true
         }
       },
       {
         "position": "Internship",
-        "description": "description",
         "dateRange": {
           "start": "Mar. 2020",
           "end": "Sep. 2020"
@@ -32,7 +30,7 @@
     "type": "Working Student",
     "company": "Benchkram Software GmbH",
     "description": "Build a cross platform prototype for plyd.io",
-    "img": "assets/logos/benchkram.png",
+    "img": "https://firebasestorage.googleapis.com/v0/b/david-tomschitz.appspot.com/o/logos%2Fbenchkram.png?alt=media&token=f0382bc4-8084-415e-b88c-a94834b6b95b",
     "position": 2,
     "dateRange": {
       "start": "Nov. 2019",
@@ -43,31 +41,11 @@
     "type": "Research Assistant",
     "company": "Hochschule der Medien Stuttgart",
     "description": "Content-Management with Zope",
-    "img": "assets/logos/hdm.png",
+    "img": "https://firebasestorage.googleapis.com/v0/b/david-tomschitz.appspot.com/o/logos%2Fhdm.png?alt=media&token=824b1254-46f1-4a7e-a7f6-5a48f370103e",
     "position": 3,
     "dateRange": {
       "start": "Nov. 2018",
       "end": "Feb. 2020"
-    }
-  },
-  {
-    "type": "Internship",
-    "company": "Dekra SE",
-    "description": "EUC & Network Management",
-    "img": "assets/logos/dekra.png",
-    "position": 4,
-    "dateRange": {
-      "start": "Jan. 2016"
-    }
-  },
-  {
-    "type": "Internship",
-    "company": "Bachmann GmbH",
-    "description": "Anwendungsentwicklung",
-    "img": "assets/logos/bachmann.png",
-    "position": 5,
-    "dateRange": {
-      "start": "Apr. 2016"
     }
   }
 ]
