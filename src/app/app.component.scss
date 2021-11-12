@@ -18,6 +18,12 @@
   }
 }
 
+.container {
+  @media screen and (max-width: 383px) {
+    padding: 1rem;
+  }
+}
+
 .about {
   @media only screen and (max-width: 744px) {
     flex-direction: column;

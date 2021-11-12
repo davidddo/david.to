@@ -1,21 +1,6 @@
 <div class="flex flex-col items-center w-full">
   <app-header *ngIf="showHeader" [@fade]></app-header>
-  <div class="dark flex flex-col w-full items-center max-w-4xl p-4">
-    <!--<div class="flex flex-col justify-center items-center mb-10 mt-10">
-      <avatar [height]="160" [width]="160"></avatar>
-      <h2 class="text-4xl font-bold text-gray-800">Hello I'm David</h2>
-      <h3 class="text-2xl font-light text-gray-500 text-center">
-        I’m a software developer from Stuttgart, DE studying at
-        <a class="font-normal" href="https://www.hdm-stuttgart.de/" target="_blank">Hochschule der Medien</a>
-        and currently working for <a class="font-normal" href="https://www.mhp.com/" target="_blank">MHP</a>.
-      </h3>
-      <div class="mb-10 mt-4">
-        <social-button type="EMAIL" href="https://github.com/davidddo" [isSVG]="false"></social-button>
-        <social-button type="GITHUB" href="https://github.com/davidddo"></social-button>
-        <social-button type="LINKEDIN" href="https://www.linkedin.com/in/david-tomschitz-10838a140"></social-button>
-        <social-button type="XING" href="https://www.xing.com/profile/David_Tomschitz/"></social-button>
-      </div>
-    </div>-->
+  <div class="container flex flex-col w-full items-center max-w-4xl p-4 m-8">
     <div class="about flex flex-row justify-center items-start mb-10 mt-10 w-full">
       <avatar [height]="160" [width]="160"></avatar>
       <div class="container flex flex-col flex-1 ml-8 h-full">
@@ -34,24 +19,6 @@
         </div>
       </div>
     </div>
-
-    <!--<div class="flex flex-col justify-center items-start mb-10 mt-10 w-full">
-      <h2 class="text-4xl font-bold text-gray-800">Hello I'm David Tomschitz,</h2>
-      <h3 class="text-2xl font-light text-gray-500">
-        a software developer from Stuttgart, DE studying at
-        <a class="font-normal" href="https://www.hdm-stuttgart.de/" target="_blank">HdM</a>
-        and currently working for <a class="font-normal" href="https://www.mhp.com/" target="_blank">MHP</a>.
-      </h3>
-
-      <div class="flex flex-1 items-end">
-        <social-button type="EMAIL" href="https://github.com/davidddo" [isSVG]="false"></social-button>
-        <social-button type="GITHUB" href="https://github.com/davidddo"></social-button>
-        <social-button type="LINKEDIN" href="https://www.linkedin.com/in/david-tomschitz-10838a140"></social-button>
-        <social-button type="XING" href="https://www.xing.com/profile/David_Tomschitz/"></social-button>
-      </div>
-
-    </div>-->
-
     <div class="section">
       <header title="Projects" subtitle="Things I have worked on in the past"></header>
       <projects [projects]="projects$ | async"></projects>
