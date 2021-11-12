@@ -1,5 +1,5 @@
-<a [href]="project?.url" target="_blank">
-  <mat-card class="border box-border rounded-2xl min-h-full p-0 overflow-hidden cursor-pointer overflow-hidden">
+<a [href]="project?.url" target="_blank" rel="noreferrer">
+  <mat-card class="border box-border rounded-2xl min-h-full p-0 cursor-pointer overflow-hidden">
     <div class="img-container flex justify-center items-center h-40 bg-opacity-80 rounded-t-2xl relative">
       <div class="flex justify-center items-center w-full h-full" [@fade]="imageLoaded"
         [ngStyle]="getBackgroundStyle()">
