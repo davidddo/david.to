@@ -13,8 +13,6 @@
   background-color: #fff;
   box-shadow: 0 0 1px 0 rgb(8 11 14 / 6%), 0 6px 6px -1px rgb(8 11 14 / 10%);
 
-  
-
   @media screen and (max-width: 455px) {
     .secondary {
       display: none;
@@ -28,7 +26,7 @@
     }
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 305px) {
     .primary {
       display: none;
       visibility: hidden;

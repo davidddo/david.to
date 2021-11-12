@@ -14,35 +14,4 @@
   &::after {
     background: #0000;
   }
-
-  &.angular,
-  &.redis {
-    color: #991b1b;
-    background-color: rgba(254, 202, 202, 0.65);
-  }
-
-  &.nestjs,
-  &.react,
-  &.android {
-    color: #1e40af;
-    background-color: rgba(191, 219, 254, 0.65);
-  }
-
-  &.mongodb,
-  &.nginx,
-  &.sqlite {
-    color: #065f46;
-    background-color: rgba(167, 243, 208, 0.65);
-  }
-
-  &.deno {
-    color: #1f2937;
-    background-color: rgba(229, 231, 235, 0.65);
-  }
-
-  &.flutter {
-    color: #ddd6fe;
-
-    background-color: rgba(91, 33, 182, 0.65);
-  }
 }

@@ -20,10 +20,18 @@
       object-fit: contain;
       pointer-events: none;
     }
+
+    .mat-expansion-panel-header-description {
+      flex-grow: unset;
+    }
   }
 }
 
 .img-container {
+  @media screen and (max-width: 383px) {
+    margin-right: 0.5rem;
+  }
+
   .shimmer {
     position: absolute;
     width: 40px;

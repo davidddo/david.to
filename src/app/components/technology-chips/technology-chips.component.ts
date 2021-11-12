@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { colors, Technology } from '@website/models';
+import { Colors, colors, Shades, Technology } from '@website/models';
 
 @Component({
   selector: 'technology-chips',
@@ -11,20 +11,30 @@ export class TechnologyChipsComponent {
   @Input() technologies: Technology[];
   usedColors: string[] = [];
 
-  getBackgroundStyle() {
-    const color = this.getRandomColor();
+  colors: { [key: string]: { [shade in Shades]: string } } = {
+    Angular: colors.Red,
+    React: colors['Light Blue'],
+    NestJS: colors.Amber,
+    GraphQL: colors.Purple,
+    Deno: colors.Teal,
+    Flutter: colors.Blue,
+    Android: colors.Green,
+    Firebase: colors.Orange,
+    MongoDB: colors['Light Green'],
+    Unity: colors.Grey,
+    Blender: colors['Blue Grey'],
+  };
+
+  getBackgroundStyle(technology: string) {
+    let color = this.colors[technology];
+    if (!color) {
+      const random = Math.floor(Math.random() * Object.keys(colors).length);
+      color = colors[Object.keys(colors)[random]];
+    }
 
     return {
-      'background-color': colors[color][100],
-      color: colors[color][900],
+      'background-color': color[100],
+      color: color[900],
     };
-  }
-
-  getRandomColor() {
-    const random = Math.floor(Math.random() * Object.keys(colors).length);
-    const color = Object.keys(colors)[random];
-
-    this.usedColors.push(color);
-    return color;
   }
 }

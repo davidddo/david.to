@@ -1,4 +1,18 @@
-<span class="text-gray-500">{{ dateRange?.start }}</span>
-<span *ngIf="dateRange?.end || dateRange?.current"> - </span>
-<span *ngIf="dateRange?.current" class="font-medium text-gray-500">Now</span>
-<span *ngIf="!dateRange?.current && dateRange?.end" class="text-gray-500">{{ dateRange?.end }}</span>
+<ng-container *ngIf="dateRange">
+  <div *ngIf="chip; else default" class="flex items-center h-7 rounded-full pl-2 pr-2 pt-1 pb-1 bg-gray-100">
+    <ng-container *ngTemplateOutlet="dateRangeContent"></ng-container>
+  </div>
+  <ng-template #default>
+    <ng-container *ngTemplateOutlet="dateRangeContent"></ng-container>
+  </ng-template>
+
+  <ng-template #dateRangeContent>
+    <div>
+      <span class="text-gray-500">{{ dateRange?.start }}</span>
+      <span *ngIf="dateRange?.end" class="text-gray-500"> - </span>
+      <span *ngIf="dateRange?.current" class="text-gray-500"> until </span>
+      <span *ngIf="dateRange?.current" class="font-medium text-gray-500">Now</span>
+      <span *ngIf="!dateRange?.current && dateRange?.end" class="text-gray-500">{{ dateRange?.end }}</span>
+    </div>
+  </ng-template>
+</ng-container>
