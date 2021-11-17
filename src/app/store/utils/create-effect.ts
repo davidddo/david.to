@@ -42,7 +42,7 @@ interface Options {
   cachingSelector?: Observable<boolean>;
 }
 
-const getOnCallbackFn = <T, A>(
+const onFn = <T, A>(
   on: On<A, T>,
   action: UnpackAction<A>,
   type: keyof OnCallbacks<T> = 'success',
@@ -60,21 +60,21 @@ const getOnCallbackFn = <T, A>(
 export const createGenericEffect = <
   T,
   AC extends ActionCreator<string, Creator>,
-  A extends string | AC,
+  AT extends string | AC,
 >(
-  allowedType: A,
-  method: Method<A, T>,
-  on: On<A, T>,
-  cachingSelector?: CachingSelector<A>,
+  allowedType: AT,
+  method: Method<AT, T>,
+  on: On<AT, T>,
+  cachingSelector?: CachingSelector<AT>,
 ) => {
   return (actions$: Actions, options?: Options) => {
     const withCaching = cachingSelector !== undefined && 'cache' in on;
-    const apiCall$ = (action: UnpackAction<A>) => {
+    const apiCall$ = (action: UnpackAction<AT>) => {
       return (typeof method === 'function' ? method(action) : method).pipe(
         delay(options?.delay ?? 250),
-        map(getOnCallbackFn(on, action)),
+        map(onFn(on, action)),
         catchError(response => {
-          return of(getOnCallbackFn(on, action, 'failure')(response));
+          return of(onFn(on, action, 'failure')(response));
         }),
       );
     };
@@ -95,7 +95,7 @@ export const createGenericEffect = <
             ),
             switchMap(([action, cached]) => {
               const action$ = cached
-                ? of(getOnCallbackFn(on, action, 'cache')(undefined))
+                ? of(onFn(on, action, 'cache')(undefined))
                 : apiCall$(action);
 
               return action$;
