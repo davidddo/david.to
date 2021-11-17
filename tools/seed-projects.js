@@ -57,8 +57,8 @@ const projects = [
     subtitle:
       'A VR game in which the player has to shoot down as many enemies as possible and at the same time not suffer too much damage by tactically using a protective shield',
     technologies: ['Unity', 'Blender'],
-    color: 'Deep Purple',
-    img: 'https://firebasestorage.googleapis.com/v0/b/david-tomschitz.appspot.com/o/projects%2Fweatherapp.png?alt=media&token=9d8d2efe-605f-4f30-ab65-a0e5aad5a0b2',
+    color: 'Teal',
+    img: 'https://firebasestorage.googleapis.com/v0/b/david-tomschitz.appspot.com/o/projects%2Fspace_invaders.png?alt=media&token=02ed27f6-1867-4545-8c4f-02e8bc07cbf2',
     url: 'https://github.com/davidddo/space-invaders-vr',
     position: 6,
   },
