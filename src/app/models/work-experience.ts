@@ -14,5 +14,5 @@ export interface WorkExperience {
 export interface WorkSection {
   dateRange: DateRange;
   position: string;
-  description: string;
+  description?: string;
 }
