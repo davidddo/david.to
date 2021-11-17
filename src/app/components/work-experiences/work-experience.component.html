@@ -7,7 +7,7 @@
         <div>
           <span class="font-medium text-gray-800">{{ section?.position }}</span>
           <div class="text-sm">
-            <date-range [dateRange]="section?.dateRange" [chip]="false"></date-range>
+            <date-range [dateRange]="section?.dateRange" [chip]="false" [showDateRangeDiff]="true"></date-range>
           </div>
         </div>
         <span *ngIf="section?.description" class="mt-2 mb-2 text-gray-500 font-light">{{ section.description }}</span>

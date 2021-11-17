@@ -13,5 +13,5 @@ export class AvatarComponent {
   @Input() width: number;
   @Input() height: number;
 
-  @Input() border: boolean = true;
+  @Input() border: boolean = false;
 }
