@@ -1,28 +1,13 @@
 import { FirestoreDataConverter } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { DateRange } from '@website/models';
 
-/*export const mapDocumentWithId = <T>(action: DocumentChangeAction<T>): T => {
-  const id = action.payload.doc.id;
-  const data = action.payload.doc.data();
-
-  return { id, ...data };
-};
-
-export const mapDocuments = () => {
-  return function <T>(source: Observable<DocumentChangeAction<T>[]>) {
-    return source.pipe(
-      map(actions =>
-        actions.map(action => {
-          const id = action.payload.doc.id;
-          const data = action.payload.doc.data();
-
-          return { id, ...data } as T;
-        }),
-      ),
-    );
+export const serializeDateRange = (range: any): DateRange => {
+  return {
+    ...range,
+    start: range.start?.toDate().toString(),
+    end: range.end?.toDate().toString(),
   };
-};*/
+};
 
 export const firestoreConverter = <T>(): FirestoreDataConverter<T> => {
   return {
