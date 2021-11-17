@@ -14,7 +14,7 @@ export class TechnologyChipsComponent {
   colors: { [key: string]: { [shade in Shades]: string } } = {
     Angular: colors.Red,
     React: colors['Light Blue'],
-    NestJS: colors.Amber,
+    NestJS: colors.Indigo,
     GraphQL: colors.Purple,
     Deno: colors.Teal,
     Flutter: colors.Blue,
