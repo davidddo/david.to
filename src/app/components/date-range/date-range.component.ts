@@ -9,5 +9,7 @@ import { DateRange } from '@website/models/date-range';
 })
 export class DateRangeComponent {
   @Input() dateRange: DateRange;
+
   @Input() chip: boolean = true;
+  @Input() showDateRangeDiff = false;
 }
