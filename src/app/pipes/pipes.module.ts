@@ -1,10 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { DateRangePipe } from './date-range.pipe';
 import { FillPipe } from './fill.pipe';
+import { FormatDatePipe } from './format-date.pipe';
+
+const pipes = [DateRangePipe, FillPipe, FormatDatePipe];
 
 @NgModule({
-  declarations: [FillPipe],
+  declarations: [...pipes],
   imports: [CommonModule],
-  exports: [FillPipe],
+  exports: [...pipes],
 })
 export class PipesModule {}
