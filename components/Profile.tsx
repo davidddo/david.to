@@ -10,12 +10,12 @@ import Button from '@/components/ui/button';
 const socials = [
   {
     name: 'Github',
-    link: 'https://github.com/achris-alonzo30',
+    link: 'https://github.com/dtomschitz',
     icon: <Github className="size-4" />,
   },
   {
     name: 'LinkedIn',
-    link: 'https://linkedin.com/in/lonzochris',
+    link: 'https://www.linkedin.com/in/david-tomschitz-10838a140',
     icon: <Linkedin className="size-4" />,
   },
 ];
@@ -47,8 +47,6 @@ const Profile = () => {
             I am a software engineer with a passion for building products that help people live better lives.
           </p>
           <Button className="mt-4 w-full" asChild>
-            {/* TODO: Add resume */}
-            {/* TODO: Add link to schedule a call with you using Calendly or Cal */}
             <Link href="/resume.pdf" target="_blank" className="font-semibold uppercase">
               CONTACT ME
             </Link>
