@@ -10,12 +10,18 @@ import Button from '@/components/ui/button';
 const socials = [
   {
     name: 'Github',
-    link: 'https://github.com/dtomschitz',
+    link: {
+      href: 'https://github.com/dtomschitz',
+      name: 'dtomschitz',
+    },
     icon: <Github className="size-4" />,
   },
   {
     name: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/david-tomschitz-10838a140',
+    link: {
+      href: 'https://www.linkedin.com/in/david-tomschitz-10838a140',
+      name: 'david-tomschitz',
+    },
     icon: <Linkedin className="size-4" />,
   },
 ];
@@ -47,20 +53,22 @@ const Profile = () => {
             I am a software engineer with a passion for building products that help people live better lives.
           </p>
           <Button className="mt-4 w-full" asChild>
-            <Link href="/resume.pdf" target="_blank" className="font-semibold uppercase">
+            <a href="mailto:david@tomschitz.de" target="_blank" className="font-semibold uppercase">
               CONTACT ME
-            </Link>
+            </a>
           </Button>
           <div className="mt-4 flex flex-col space-y-2 border-t border-border pt-4 w-full">
-            {socials.map((s, i) => {
-              const parts = s.link.split('/');
-              const username = parts[parts.length - 1];
-
+            {socials.map((social, i) => {
               return (
-                <Link key={i} href={s.link} target="_blank" className="cursor-pointer flex items-center gap-2 group">
-                  {s.icon}
+                <Link
+                  key={i}
+                  href={social.link.href}
+                  target="_blank"
+                  className="cursor-pointer flex items-center gap-2 group"
+                >
+                  {social.icon}
                   <span className="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
-                    /{username}
+                    /{social.link.name}
                   </span>
                 </Link>
               );
