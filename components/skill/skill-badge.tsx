@@ -3,7 +3,6 @@ import {
   FaGolang,
   FaJava,
   FaPython,
-  FaC,
   FaMicrosoft,
   FaAws,
   FaAngular,

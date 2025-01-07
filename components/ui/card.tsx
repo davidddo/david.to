@@ -12,9 +12,9 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
       <div ref={ref} className={cn('rounded-xl border-2 bg-card text-card-foreground', className)} {...props}>
         {React.Children.map(children, (child) =>
           React.isValidElement(child) && child.type === CardContent
-            ? React.cloneElement(child as React.ReactElement<any>, {
+            ? React.cloneElement(child as React.ReactElement<React.HTMLAttributes<HTMLDivElement>>, {
                 className: cn(
-                  (child as React.ReactElement<any>).props?.className,
+                  (child as React.ReactElement<React.HTMLAttributes<HTMLDivElement>>).props?.className,
                   hasHeader && 'pt-0 sm:pt-0'
                 ),
               })
