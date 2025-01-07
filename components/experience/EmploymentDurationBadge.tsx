@@ -1,5 +1,5 @@
 import {Duration} from '@/types';
-import Badge, { BadgeProps } from '@/components/ui/badge';
+import Badge, {BadgeProps} from '@/components/ui/badge';
 
 type Props = BadgeProps & {
   duration: Duration;
@@ -9,7 +9,7 @@ const EmploymentDurationBadge = ({duration, ...props}: Props) => {
   return (
     <Badge variant="secondary" size="sm" {...props}>
       <span>
-        {duration.start} - {duration.end}
+        {duration.start} - {duration.end ?? 'Present'}
       </span>
     </Badge>
   );

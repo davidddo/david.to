@@ -22,8 +22,7 @@ const experiences: Experience[] = [
         employmentType: 'full-time',
         location: 'Ludwigsburg, Baden-Württemberg, Deutschland',
         duration: {
-          start: '2022',
-          end: '2023',
+          start: 'Aug 2022',
         },
       },
       {
@@ -31,8 +30,8 @@ const experiences: Experience[] = [
         employmentType: 'full-time',
         location: 'Ludwigsburg, Baden-Württemberg, Deutschland',
         duration: {
-          start: '2022',
-          end: '2023',
+          start: 'Mar 2022',
+          end: 'Aug 2022',
         },
       },
       {
@@ -40,16 +39,16 @@ const experiences: Experience[] = [
         employmentType: 'part-time',
         location: 'Heimsheim, Baden-Württemberg, Deutschland',
         duration: {
-          start: '2022',
-          end: '2023',
+          start: 'Sep 2020',
+          end: 'Mar 2022',
         },
       },
       {
         role: 'Intern',
         employmentType: 'internship',
         duration: {
-          start: '2022',
-          end: '2023',
+          start: 'Mar 2020',
+          end: 'Sep 2020',
         },
         description: 'test',
       },
@@ -67,7 +66,8 @@ const experiences: Experience[] = [
     employmentType: 'part-time',
 
     duration: {
-      start: '2020',
+      start: 'Nov 2019',
+      end: 'Feb 2020',
     },
   },
   {
@@ -81,7 +81,8 @@ const experiences: Experience[] = [
     role: 'Research Assistant',
     employmentType: 'part-time',
     duration: {
-      start: '2020',
+      start: 'Nov 2018',
+      end: 'Feb 2020',
     },
   },
 ];
