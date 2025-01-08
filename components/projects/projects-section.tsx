@@ -32,7 +32,7 @@ const projects: Project[] = [
     },
     title: 'Bucket Map',
     description:
-      'Developed the Website and API of the Handball club SV-Vaihingen, aswell as a custom tailored Content-Mangement-System',
+      'A IOS and Android app that enables the user to unlock new countries and save favorite places that they might want to visit again at some point',
     techstack: ['Flutter', 'Firebase'],
     link: 'https://github.com/dtomschitz/bucket-map',
   },
@@ -53,8 +53,7 @@ const projects: Project[] = [
       alt: 'SVV Handball Logo',
     },
     title: 'Bingo',
-    description:
-      'A brawler game in which the player tries to survive waves of enemies in a saloon by buying new weapons and having a drink at the bar',
+    description: 'A student project with the goal of creating a bingo web app using React and Deno',
     techstack: ['React', 'Deno', 'MongoDB'],
     link: 'https://github.com/dtomschitz/bar-brawler',
   },
