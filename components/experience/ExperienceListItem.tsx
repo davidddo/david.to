@@ -10,6 +10,7 @@ import Timeline, {
   TimelineLine,
   TimelineContent,
 } from '@/components/ui/timeline';
+import SkillBadge from '@/components/skill/skill-badge';
 
 import EmploymentDurationBadge from './EmploymentDurationBadge';
 import EmploymentTypeBadge from './EmploymentTypeBadge';
@@ -35,6 +36,7 @@ const ExperienceListItem = ({experience}: Props) => {
           </div>
         </div>
       </div>
+      {experience.description && <div className="mt-2 text-sm text-muted-foreground">{experience.description}</div>}{' '}
       {steps.length !== 0 && (
         <Timeline positions="left" className="mt-4">
           {steps.map((step, index) => {
@@ -54,7 +56,12 @@ const ExperienceListItem = ({experience}: Props) => {
                     <EmploymentDurationBadge duration={step.duration} />
                     <EmploymentTypeBadge employmentType={step.employmentType} />
                   </div>
-                  {step.description}
+                  {step.description && <div className="mt-2 text-sm text-muted-foreground">{step.description}</div>}{' '}
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {step.skills?.map((skill) => (
+                      <SkillBadge key={skill} skill={skill} size="sm" />
+                    ))}
+                  </div>
                 </TimelineContent>
               </TimelineItem>
             );

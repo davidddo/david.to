@@ -18,7 +18,7 @@ import {
 } from 'react-icons/fa6';
 import {RiNextjsFill, RiFirebaseFill} from 'react-icons/ri';
 import {BiLogoPostgresql} from 'react-icons/bi';
-import {SiRedis, SiTypescript, SiMongodb, SiNestjs, SiDeno, SiBlender} from 'react-icons/si';
+import {SiRedis, SiTypescript, SiMongodb, SiNestjs, SiDeno, SiBlender, SiApachekafka} from 'react-icons/si';
 
 import {Skill} from '@/types/skill';
 import Badge, {BadgeProps} from '../ui/badge';
@@ -56,6 +56,7 @@ const icons: Record<string, ReactNode> = {
   'GitHub': <FaGithub />,
   'GitLab': <FaGitlab />,
   'Jenkins': <FaJenkins />,
+  'Kafka': <SiApachekafka />,
 };
 
 const SkillBadge = ({skill, ...props}: Props) => {

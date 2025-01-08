@@ -50,7 +50,7 @@ const Profile = () => {
           </div>
 
           <p className="mt-2 text-start text-sm text-muted-foregrounld">
-            I am a software engineer with a passion for building products that help people live better lives.
+            Hi, im David and a full stack software engineer 
           </p>
           <Button className="mt-4 w-full" asChild>
             <a href="mailto:david@tomschitz.de" target="_blank" className="font-semibold uppercase">
