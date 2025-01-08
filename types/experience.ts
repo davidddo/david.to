@@ -1,5 +1,5 @@
 import {Image} from './image';
-import { Skill } from './skill';
+import {Skill} from './skill';
 
 export interface Experience {
   company: Company;
@@ -7,6 +7,7 @@ export interface Experience {
   duration: Duration;
   employmentType?: EmploymentType;
   description?: string;
+  skills?: Skill[];
   steps?: ExperienceStep[];
 }
 

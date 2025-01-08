@@ -9,12 +9,12 @@ type Props = {
 
 const ProjectListItem = ({project}: Props) => {
   return (
-    <div className="flex flex-col h-full py-2 px-6 duration-150 transition-colors sm:px-6 hover:bg-secondary/80 hover:cursor-pointer">
+    <div className="flex flex-col h-full py-2 px-4 duration-150 transition-colors sm:px-6 hover:bg-secondary/80 hover:cursor-pointer">
       <Link href={project.link} target="_blank">
         <div className="font-semibold text-primary ">{project.title}</div>
         <p className="text-sm text-muted-foreground my-1">{project.description}</p>
         <div className="mt-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <div className="flex flex-wrap items-center gap-2">
             {project.techstack.map((skill) => (
               <SkillBadge key={skill} skill={skill} size="sm" />
             ))}

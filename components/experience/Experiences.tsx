@@ -20,7 +20,7 @@ const experiences: Experience[] = [
       {
         role: 'Consultant',
         employmentType: 'full-time',
-        location: 'Ludwigsburg, Baden-Württemberg, Deutschland',
+        location: 'Ludwigsburg, Baden-Württemberg, Germany',
         duration: {
           start: 'Aug 2022',
         },
@@ -31,7 +31,7 @@ const experiences: Experience[] = [
       {
         role: 'Junior Consultant',
         employmentType: 'full-time',
-        location: 'Ludwigsburg, Baden-Württemberg, Deutschland',
+        location: 'Ludwigsburg, Baden-Württemberg, Germany',
         duration: {
           start: 'Mar 2022',
           end: 'Aug 2022',
@@ -41,7 +41,7 @@ const experiences: Experience[] = [
       {
         role: 'Working Student',
         employmentType: 'part-time',
-        location: 'Heimsheim, Baden-Württemberg, Deutschland',
+        location: 'Heimsheim, Baden-Württemberg, Germany',
         duration: {
           start: 'Sep 2020',
           end: 'Mar 2022',
@@ -53,6 +53,7 @@ const experiences: Experience[] = [
       {
         role: 'Intern',
         employmentType: 'internship',
+        location: 'Heimsheim, Baden-Württemberg, Germany',
         duration: {
           start: 'Mar 2020',
           end: 'Sep 2020',
@@ -79,6 +80,7 @@ const experiences: Experience[] = [
     },
     description:
       'Developed a MVP mobile app for a streaming service where coaches of handball teams can analyze the overall performance by reviewing game footage and rewatching key moments.',
+      skills: ['Flutter']
   },
   {
     company: {
@@ -95,6 +97,7 @@ const experiences: Experience[] = [
       end: 'Feb 2020',
     },
     description: 'Managed and maintained parts of the official website of the Hochschule der Medien Stuttgart. ',
+    skills: ['Python', 'MySQL']
   },
 ];
 

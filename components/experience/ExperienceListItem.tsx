@@ -27,7 +27,7 @@ const ExperienceListItem = ({experience}: Props) => {
     <li className="border-b pb-4 last:border-b-0 sm:pb-6 last:pb-0">
       <div className="flex items-center space-x-4">
         <div>
-          <h3 className="font-semibold">{experience.role}</h3>
+          <h3 className="h-4 leading-4 font-semibold">{experience.role}</h3>
           <p className="text-sm text-muted-foreground">{experience.company.name}</p>
           <div className="flex items-center space-x-2">
             <EmploymentDurationBadge duration={experience.duration} />
@@ -37,6 +37,13 @@ const ExperienceListItem = ({experience}: Props) => {
         </div>
       </div>
       {experience.description && <div className="mt-2 text-sm text-muted-foreground">{experience.description}</div>}{' '}
+      {experience.skills && (
+        <div className="mt-2 flex flex-wrap gap-2">
+          {experience.skills?.map((skill) => (
+            <SkillBadge key={skill} skill={skill} size="sm" />
+          ))}
+        </div>
+      )}
       {steps.length !== 0 && (
         <Timeline positions="left" className="mt-4">
           {steps.map((step, index) => {
@@ -45,7 +52,7 @@ const ExperienceListItem = ({experience}: Props) => {
 
             return (
               <TimelineItem key={step.role} status="default">
-                <TimelineHeading side="right" className="flex flex-col font-bold">
+                <TimelineHeading side="right" className="flex flex-col font-semibold h-4 leading-4">
                   {step.role}
                 </TimelineHeading>
                 <TimelineDot status={isFirstItem ? 'current' : 'default'} />
@@ -57,11 +64,13 @@ const ExperienceListItem = ({experience}: Props) => {
                     <EmploymentTypeBadge employmentType={step.employmentType} />
                   </div>
                   {step.description && <div className="mt-2 text-sm text-muted-foreground">{step.description}</div>}{' '}
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {step.skills?.map((skill) => (
-                      <SkillBadge key={skill} skill={skill} size="sm" />
-                    ))}
-                  </div>
+                  {step.skills && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {step.skills?.map((skill) => (
+                        <SkillBadge key={skill} skill={skill} size="sm" />
+                      ))}
+                    </div>
+                  )}
                 </TimelineContent>
               </TimelineItem>
             );

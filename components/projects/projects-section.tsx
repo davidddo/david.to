@@ -1,6 +1,6 @@
 import {Project} from '@/types';
 import Card, {CardContent, CardHeader, CardTitle} from '../ui/card';
-import ProjectListItem from './ProjectListItem';
+import ProjectListItem from './project-list-item';
 
 const projects: Project[] = [
   {
@@ -11,7 +11,7 @@ const projects: Project[] = [
     title: 'Movie Night',
     description:
       'A web app where friends can vote together for a customly selected list of movies they want to watch on a defined date. Using a restful API design and websockets for real-time communication between the server and clients.',
-    techstack: ['Next.js', 'Go', 'MongoDB'],
+    techstack: ['Next.js', 'Go', 'MongoDB', 'TailwindCSS'],
     link: 'https://movie-night.up.railway.app/',
   },
   {
@@ -22,7 +22,7 @@ const projects: Project[] = [
     title: 'SVV Handball',
     description:
       'Developed the Website and API of the Handball club SV-Vaihingen, aswell as a custom tailored Content-Mangement-System',
-    techstack: ['Next.js', 'Nest.js', 'MongoDB'],
+    techstack: ['Next.js', 'Nest.js', 'MongoDB', 'Prisma', 'TailwindCSS'],
     link: 'https://svv-handball.de/',
   },
   {
