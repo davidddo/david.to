@@ -28,6 +28,7 @@ import {
   SiApachekafka,
   SiTailwindcss,
   SiMysql,
+  SiPrisma,
 } from 'react-icons/si';
 
 import {Skill} from '@/types/skill';
@@ -52,7 +53,7 @@ const icons: Record<string, ReactNode> = {
   'Redis': <SiRedis />,
   'Firestore': <RiFirebaseFill />,
   'MySQL': <SiMysql />,
-
+  'Prisma': <SiPrisma />,
   'Next.js': <RiNextjsFill />,
   'Nest.js': <SiNestjs />,
   'Angular': <FaAngular />,

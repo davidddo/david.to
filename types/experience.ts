@@ -31,4 +31,4 @@ export interface Company {
   website?: string;
 }
 
-export type EmploymentType = 'full-time' | 'part-time' | 'freelance' | 'internship';
+export type EmploymentType = 'full-time' | 'part-time' | 'freelance' | 'internship' | 'volunteer';

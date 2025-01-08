@@ -1,5 +1,5 @@
 import {ExperienceStep} from '@/types';
-import Badge, { BadgeProps } from '@/components/ui/badge';
+import Badge, {BadgeProps} from '@/components/ui/badge';
 
 type Props = BadgeProps & {
   employmentType: ExperienceStep['employmentType'];
@@ -10,6 +10,7 @@ const nameMap: Record<ExperienceStep['employmentType'], string> = {
   'part-time': 'Part-Time',
   freelance: 'Freelance',
   internship: 'Internship',
+  volunteer: 'Volunteer',
 };
 
 const EmploymentTypeBadge = ({employmentType, ...props}: Props) => {

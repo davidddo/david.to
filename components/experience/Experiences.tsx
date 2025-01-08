@@ -80,7 +80,7 @@ const experiences: Experience[] = [
     },
     description:
       'Developed a MVP mobile app for a streaming service where coaches of handball teams can analyze the overall performance by reviewing game footage and rewatching key moments.',
-      skills: ['Flutter']
+    skills: ['Flutter'],
   },
   {
     company: {
@@ -97,7 +97,24 @@ const experiences: Experience[] = [
       end: 'Feb 2020',
     },
     description: 'Managed and maintained parts of the official website of the Hochschule der Medien Stuttgart. ',
-    skills: ['Python', 'MySQL']
+    skills: ['Python', 'MySQL'],
+  },
+  {
+    company: {
+      name: 'Sportverein Vaihingen 1889 e.V. (Handball)',
+      website: 'https://svv-handball.de/',
+      logo: {
+        src: '/company/svv.png',
+        alt: 'SVV Handball Logo',
+      },
+    },
+    duration: {
+      start: '2016',
+    },
+    role: 'IT Administrator',
+    employmentType: 'volunteer',
+    description: 'Development and maintenance of the website of the Handball club SV-Vaihingen.',
+    skills: ['Next.js', 'Nest.js', 'MongoDB', 'Prisma', 'TailwindCSS'],
   },
 ];
 

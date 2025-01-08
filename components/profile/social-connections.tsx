@@ -1,7 +1,7 @@
 import {HTMLAttributes} from 'react';
 import {Github, Linkedin} from 'lucide-react';
 import {SocialConnection} from '@/types/social';
-import AnimatedLink from '../ui/animated-link';
+import AnimatedLink from '@/components/ui/animated-link';
 
 const socials: SocialConnection[] = [
   {
